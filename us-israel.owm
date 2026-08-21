@@ -1,0 +1,22 @@
+anchor US Israel Strategic Objective [0.97, 0.05]
+component War Aims Political Outcome [0.90, 0.08]
+component Coalition Legitimacy Mecca Pact GCC [0.70, 0.42]
+component Decapitation Strike Capability [0.48, 0.38]
+component Munitions and Interceptor Stockpiles [0.32, 0.50]
+component Sanctions and Blockade Tooling [0.18, 0.85]
+component Mediation Channels Oman Qatar Pakistan [0.40, 0.32]
+component Political Override of Military Assessment [0.55, 0.15]
+
+US Israel Strategic Objective->War Aims Political Outcome
+War Aims Political Outcome->Coalition Legitimacy Mecca Pact GCC
+War Aims Political Outcome->Mediation Channels Oman Qatar Pakistan
+War Aims Political Outcome->Political Override of Military Assessment
+Coalition Legitimacy Mecca Pact GCC->Decapitation Strike Capability
+Decapitation Strike Capability->Munitions and Interceptor Stockpiles
+Munitions and Interceptor Stockpiles->Sanctions and Blockade Tooling
+Mediation Channels Oman Qatar Pakistan->Sanctions and Blockade Tooling
+Political Override of Military Assessment->Decapitation Strike Capability
+
+note "Interceptor stock reported 60 to 80 percent depleted across independent sources" [0.28, 0.55]
+note "Trump threatened Oman on 17 Aug 2026 destabilizing the mediation channel itself" [0.45, 0.28]
+note "Political override element added 20 Aug 2026 based on documented Caine Trump gap" [0.60, 0.12]

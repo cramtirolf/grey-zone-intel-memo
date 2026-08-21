@@ -1,0 +1,13 @@
+From,To,Type,Direction,Note
+"Strike / Decapitation (US-Israel)","Retaliation (Iran and Proxies)","Reinforcing",directed,"Strike provokes retaliation"
+"Retaliation (Iran and Proxies)","Political Capital Sunk","Reinforcing",directed,"Retaliation raises the cost of stopping"
+"Political Capital Sunk","Strike / Decapitation (US-Israel)","Reinforcing",directed,"Sunk cost drives further strikes"
+"Political Capital Sunk","Hormuz Closure (Iran)","Cross-Link",directed,"Escalation widens the war into new fronts"
+"Hormuz Closure (Iran)","Global Oil and Shipping Shock","Balancing",directed,"Closure disrupts global energy flow"
+"Global Oil and Shipping Shock","Economic Pain (All Sides)","Balancing",directed,"Shock translates into economic cost"
+"Economic Pain (All Sides)","Pressure to De-escalate","Balancing",directed,"Economic cost builds pressure to stop"
+"Pressure to De-escalate","Hormuz Closure (Iran)","Balancing (Delayed)",directed,"Weeks-long delay before pressure eases the closure"
+"Economic Pain (All Sides)","US Appetite for More Strikes Falls","Cross-Link",directed,"Munitions and interceptor stockpiles reported heavily depleted"
+"Pressure to De-escalate","US Appetite for More Strikes Falls","Cross-Link",directed,"Internal military assessment favors an off-ramp"
+"US Appetite for More Strikes Falls","Political Override of Military Assessment","Signal Blocked",directed,"Falling appetite signal reaches political leadership"
+"Political Override of Military Assessment","Strike / Decapitation (US-Israel)","Override",directed,"Signal is rejected; escalatory rhetoric and action continue despite depleted stockpiles, per 17-20 Aug 2026 reporting"

@@ -1,0 +1,10 @@
+Label,Type,Description,Group
+"Strike / Decapitation (US-Israel)",Action,"Initial and ongoing military strikes against Iranian leadership, military, and nuclear-linked infrastructure.","Escalation Loop (R1)"
+"Retaliation (Iran and Proxies)",Action,"Missile, drone, and proxy attacks across the region carried out in response to strikes.","Escalation Loop (R1)"
+"Political Capital Sunk",State,"Accumulated political and reputational cost on all sides that makes stopping harder than continuing.","Escalation Loop (R1)"
+"Hormuz Closure (Iran)",Action,"Iran's closure of the Strait of Hormuz, used as a coercive lever against oil-dependent economies.","Exhaustion Loop (B1)"
+"Global Oil and Shipping Shock",State,"Disruption to global energy markets and shipping routes caused by the closure.","Exhaustion Loop (B1)"
+"Economic Pain (All Sides)",State,"Rising economic cost felt domestically by all belligerents and by the global economy.","Exhaustion Loop (B1)"
+"Pressure to De-escalate",State,"Diplomatic and domestic pressure building toward a negotiated settlement.","Exhaustion Loop (B1)"
+"US Appetite for More Strikes Falls",State,"Declining willingness and material capacity within the US command structure to continue strikes, per internal assessments.","Exhaustion Loop (B1)"
+"Political Override of Military Assessment",State,"Political leadership publicly rejects or overrides the military's internal de-escalation assessment, sustaining escalatory rhetoric and action despite exhaustion signals. Added 20 Aug 2026 based on the documented Caine-Trump gap.","Override Dynamic (New)"

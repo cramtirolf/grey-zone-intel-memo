@@ -1,0 +1,18 @@
+From,To,Type,Direction
+"Strike / Decapitation (US-Israel)","Escalation Loop (R1)","Member Of",directed
+"Retaliation (Iran and Proxies)","Escalation Loop (R1)","Member Of",directed
+"Political Capital Sunk","Escalation Loop (R1)","Member Of",directed
+"Hormuz Closure (Iran)","Exhaustion Loop (B1)","Member Of",directed
+"Global Oil and Shipping Shock","Exhaustion Loop (B1)","Member Of",directed
+"Economic Pain (All Sides)","Exhaustion Loop (B1)","Member Of",directed
+"Pressure to De-escalate","Exhaustion Loop (B1)","Member Of",directed
+"US Appetite for More Strikes Falls","Exhaustion Loop (B1)","Member Of",directed
+"Strike / Decapitation (US-Israel)","War Containment Loop (B2)","Member Of",directed
+"Retaliation (Iran and Proxies)","War Containment Loop (B2)","Member Of",directed
+"Political Capital Sunk","War Containment Loop (B2)","Member Of",directed
+"Hormuz Closure (Iran)","War Containment Loop (B2)","Member Of",directed
+"Global Oil and Shipping Shock","War Containment Loop (B2)","Member Of",directed
+"Economic Pain (All Sides)","War Containment Loop (B2)","Member Of",directed
+"Pressure to De-escalate","War Containment Loop (B2)","Member Of",directed
+"US Appetite for More Strikes Falls","War Containment Loop (B2)","Member Of",directed
+"Political Override of Military Assessment","War Containment Loop (B2)","Member Of",directed

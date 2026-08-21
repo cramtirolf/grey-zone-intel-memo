@@ -1,0 +1,18 @@
+anchor Iran Strategic Objective [0.97, 0.05]
+component Regime Domestic Legitimacy [0.92, 0.08]
+component Proxy Network Houthis Hezbollah Militias [0.62, 0.28]
+component Nuclear Program [0.40, 0.25]
+component Hormuz Closure Lever [0.68, 0.62]
+component Diplomatic Backchannels Oman Qatar Turkey Pakistan [0.20, 0.55]
+
+Iran Strategic Objective->Regime Domestic Legitimacy
+Regime Domestic Legitimacy->Proxy Network Houthis Hezbollah Militias
+Regime Domestic Legitimacy->Nuclear Program
+Proxy Network Houthis Hezbollah Militias->Hormuz Closure Lever
+Nuclear Program->Hormuz Closure Lever
+Hormuz Closure Lever->Diplomatic Backchannels Oman Qatar Turkey Pakistan
+
+note "Mojtaba Khamenei formally elected supreme leader 8 March 2026 resolving the succession process itself" [0.85, 0.15]
+note "Domestic legitimacy remains contested amid 96 percent inflation and rising executions" [0.90, 0.10]
+note "Interim shipping lane deal with Oman in final drafting stage but not a full reopening" [0.55, 0.58]
+note "US threat against Oman on 17 Aug 2026 undermines this channel" [0.15, 0.50]

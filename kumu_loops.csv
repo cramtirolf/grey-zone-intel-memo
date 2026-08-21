@@ -1,0 +1,4 @@
+Label,Type,Polarity,Description
+"Escalation Loop (R1)",Loop,Reinforcing,"Strike leads to retaliation leads to sunk political cost leads back to further strikes. Self-amplifying; does not stop on its own."
+"Exhaustion Loop (B1)",Loop,Balancing,"Hormuz closure leads to economic shock leads to pressure to de-escalate leads back to easing the closure, with a multi-week lag."
+"War Containment Loop (B2)",Loop,"Balancing (mechanism currently blocked)","Emergent loop connecting R1 and B1 through two bridge links and, as of 20 Aug 2026, the Political Override node. In principle this loop constrains escalation; in practice the override element represents that constraint being consciously bypassed by political leadership rather than acted on. Formalized as a named loop 21 Aug 2026."
