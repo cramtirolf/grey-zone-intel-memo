@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Archive — Grey Zone Intel Memo</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+
+:root {
+  --paper-50: #FBF9F4; --paper-100: #F4F1EA; --paper-200: #E9E4D8;
+  --ink-900: #14161A; --ink-700: #2B2E33;
+  --slate-600: #5B6068; --slate-400: #8B8F96;
+  --line-300: #D9D4C8; --line-500: #B7B0A0;
+  --signal-700: #7A1E17; --signal-500: #A6291F; --signal-100: #F1DEDB;
+  --amber-700: #7A5410; --amber-500: #9C6B14; --amber-100: #EFE3C8;
+  --navy-700: #1B2A3B;
+
+  --bg-page: var(--paper-100); --bg-surface: var(--paper-50); --bg-surface-sunken: var(--paper-200);
+  --text-primary: var(--ink-900); --text-secondary: var(--ink-700);
+  --text-muted: var(--slate-600); --text-faint: var(--slate-400);
+  --border-default: var(--line-300); --border-strong: var(--line-500);
+  --accent-alert: var(--signal-500); --accent-alert-bg: var(--signal-100); --accent-alert-strong: var(--signal-700);
+  --accent-elevated: var(--amber-500); --accent-elevated-bg: var(--amber-100); --accent-elevated-strong: var(--amber-700);
+  --link: var(--navy-700); --link-hover: var(--ink-900);
+
+  --font-serif: 'Newsreader', 'PT Serif', Georgia, serif;
+  --font-sans: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
+  --font-mono: 'IBM Plex Mono', 'SF Mono', Consolas, monospace;
+}
+
+* { box-sizing: border-box; }
+body { background: var(--bg-page); color: var(--text-primary); font-family: var(--font-sans); margin: 0; -webkit-font-smoothing: antialiased; }
+a { color: var(--link); text-decoration: none; }
+a:hover { color: var(--link-hover); }
+.wrap { max-width: 1160px; margin: 0 auto; }
+
+.masthead { display: flex; align-items: center; justify-content: space-between; padding: 20px 48px; border-bottom: 2px solid var(--ink-900); }
+.masthead-brand { display: flex; align-items: center; gap: 16px; color: inherit; text-decoration: none; }
+.masthead-title .name { font-family: var(--font-sans); font-weight: 700; font-size: 34px; letter-spacing: 0.04em; color: var(--text-primary); white-space: nowrap; }
+.masthead-title .sub { font-family: var(--font-mono); font-weight: 700; font-size: 11px; letter-spacing: 0.4em; text-transform: uppercase; color: var(--text-secondary); }
+.masthead-nav { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; }
+.masthead-nav a { color: var(--text-primary); border-bottom: 2px solid var(--text-primary); padding-bottom: 4px; }
+
+.classbar { padding: 12px 48px; background: var(--bg-surface-sunken); border-bottom: 1px solid var(--border-default); font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); }
+
+.hero { padding: 48px 48px 8px; }
+.hero .kicker { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 10px; }
+.hero h1 { font-family: var(--font-serif); font-weight: 600; font-size: 34px; margin: 0; letter-spacing: -0.01em; }
+.hero p { font-family: var(--font-sans); color: var(--text-secondary); font-size: 16px; line-height: 1.6; max-width: 62ch; margin-top: 12px; }
+
+.list { padding: 24px 48px 80px; display: flex; flex-direction: column; gap: 1px; background: var(--border-default); border: 1px solid var(--border-default); }
+.card { background: var(--bg-surface); padding: 28px 32px; display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: start; }
+.card:hover { background: var(--bg-page); }
+.card-main { min-width: 0; }
+.card-meta { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted); display: flex; gap: 10px; flex-wrap: wrap; align-items: center; margin-bottom: 10px; }
+.card-meta .latest { color: var(--accent-alert-strong); font-weight: 700; }
+.card h2 { font-family: var(--font-serif); font-weight: 600; font-size: 22px; margin: 0; letter-spacing: -0.005em; color: var(--text-primary); }
+.card p { font-family: var(--font-sans); font-size: 14.5px; line-height: 1.55; color: var(--text-secondary); margin: 10px 0 0; max-width: 66ch; }
+.card .tags { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 14px; }
+.card .tag { font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.06em; text-transform: uppercase; padding: 3px 8px; border-radius: 2px; background: var(--bg-surface-sunken); color: var(--text-secondary); border: 1px solid var(--border-default); }
+.card .badge { align-self: start; font-family: var(--font-mono); font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 4px 10px; border-radius: 2px; white-space: nowrap; background: var(--accent-alert-bg); color: var(--accent-alert-strong); border: 1px solid var(--accent-alert); }
+.card .badge.elevated { background: var(--accent-elevated-bg); color: var(--accent-elevated-strong); border-color: var(--accent-elevated); }
+a.card-link { display: block; }
+
+.state { padding: 48px; font-family: var(--font-mono); font-size: 13px; color: var(--text-muted); }
+
+footer.pagefoot { padding: 32px 48px; border-top: 2px solid var(--ink-900); font-family: var(--font-mono); font-size: 11px; color: var(--text-faint); letter-spacing: 0.04em; }
+
+@media (max-width: 680px) {
+  .masthead, .classbar, .hero, .list, footer.pagefoot { padding-left: 20px; padding-right: 20px; }
+  .card { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="masthead">
+    <a class="masthead-brand" href="/">
+      <img src="/assets/logo.png" alt="Grey Zone" style="height:76px;width:76px">
+      <div class="masthead-title">
+        <div class="name">GREY ZONE</div>
+        <div class="sub">Intelligence &amp; Analytics</div>
+      </div>
+    </a>
+    <nav class="masthead-nav"><a href="/archive.html">Archive</a></nav>
+  </div>
+
+  <div class="classbar">Archive &middot; All published reports</div>
+
+  <div class="hero">
+    <div class="kicker">Report archive</div>
+    <h1>Every memo, in order</h1>
+    <p>The homepage always shows the most recently published report. Browse the full record below, or open any prior memo directly.</p>
+  </div>
+
+  <div id="list" class="list">
+    <div class="state">Loading reports…</div>
+  </div>
+
+</div>
+
+<footer class="pagefoot">GREY ZONE INTELLIGENCE &amp; ANALYTICS — ARCHIVE</footer>
+
+<script>
+function badgeClass(level) {
+  return (level === 'SEVERE' || level === 'HIGH' || level === 'CRITICAL') ? 'badge' : 'badge elevated';
+}
+function fmtDate(iso) {
+  var d = new Date(iso);
+  return d.toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric', timeZone: 'UTC' }).toUpperCase();
+}
+
+fetch('/reports/manifest.json')
+  .then(function (r) { return r.json(); })
+  .then(function (list) {
+    var sorted = list.slice().sort(function (a, b) {
+      return new Date(b.publishedAt) - new Date(a.publishedAt);
+    });
+    var listEl = document.getElementById('list');
+    listEl.innerHTML = '';
+    sorted.forEach(function (r, i) {
+      var a = document.createElement('a');
+      a.className = 'card-link';
+      a.href = '/reports/' + r.slug + '.html';
+      var tags = (r.tags || []).map(function (t) { return '<span class="tag">' + t + '</span>'; }).join('');
+      a.innerHTML =
+        '<div class="card">' +
+          '<div class="card-main">' +
+            '<div class="card-meta">' +
+              (i === 0 ? '<span class="latest">Latest</span><span>&middot;</span>' : '') +
+              '<span>' + (r.desk || '') + '</span><span>&middot;</span><span>' + fmtDate(r.publishedAt) + '</span>' +
+            '</div>' +
+            '<h2>' + r.title + '</h2>' +
+            '<p>' + r.dek + '</p>' +
+            '<div class="tags">' + tags + '</div>' +
+          '</div>' +
+          '<div class="' + badgeClass(r.level) + '">' + r.levelBadge + '</div>' +
+        '</div>';
+      listEl.appendChild(a);
+    });
+  })
+  .catch(function (err) {
+    console.error(err);
+    document.getElementById('list').innerHTML = '<div class="state">Unable to load the report list.</div>';
+  });
+</script>
+</body>
+</html>
