@@ -1,0 +1,440 @@
+<title>AI Infrastructure &amp; Water: Australia</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+
+  :root {
+    --paper-50: #FBF9F4;
+    --paper-100: #F4F1EA;
+    --paper-200: #E9E4D8;
+    --ink-900: #14161A;
+    --ink-700: #2B2E33;
+    --slate-600: #5B6068;
+    --slate-400: #8B8F96;
+    --slate-200: #C7C9CD;
+    --line-300: #D9D4C8;
+    --line-500: #B7B0A0;
+    --signal-700: #7A1E17;
+    --signal-500: #A6291F;
+    --signal-100: #F1DEDB;
+    --amber-700: #7A5410;
+    --amber-500: #9C6B14;
+    --amber-100: #EFE3C8;
+    --navy-900: #131F2B;
+    --navy-700: #1B2A3B;
+
+    --bg-page: var(--paper-100);
+    --bg-surface: var(--paper-50);
+    --bg-surface-sunken: var(--paper-200);
+    --bg-inverse: var(--ink-900);
+    --text-primary: var(--ink-900);
+    --text-secondary: var(--ink-700);
+    --text-muted: var(--slate-600);
+    --text-faint: var(--slate-400);
+    --text-inverse: var(--paper-50);
+    --border-default: var(--line-300);
+    --border-strong: var(--line-500);
+    --accent-alert: var(--signal-500);
+    --accent-alert-bg: var(--signal-100);
+    --accent-alert-strong: var(--signal-700);
+    --accent-elevated: var(--amber-500);
+    --accent-elevated-bg: var(--amber-100);
+    --accent-elevated-strong: var(--amber-700);
+    --link: var(--navy-700);
+    --link-hover: var(--ink-900);
+
+    --font-serif: 'Newsreader', 'PT Serif', Georgia, serif;
+    --font-sans: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
+    --font-mono: 'IBM Plex Mono', 'SF Mono', Consolas, monospace;
+
+    /* Grey Zone is a committed single-theme brand -- paper + ink, no dark
+       variant in the source design system -- so this page intentionally
+       does not branch on prefers-color-scheme. See brand readme. */
+    --exhibit-bg: var(--paper-50);
+    --exhibit-border: var(--line-300);
+    --exhibit-text: var(--ink-900);
+    --exhibit-caption: var(--slate-600);
+  }
+
+  * { box-sizing: border-box; }
+  html { background: var(--bg-page); }
+  body {
+    background: var(--bg-page);
+    color: var(--text-primary);
+    font-family: var(--font-sans);
+    font-size: 16px;
+    line-height: 1.55;
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--link); text-decoration: none; }
+  a:hover { color: var(--link-hover); text-decoration: underline; }
+  a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px solid var(--accent-alert); outline-offset: 2px; }
+  ::selection { background: var(--accent-elevated-bg); }
+  h1, h2, h3, h4 { font-family: var(--font-serif); font-weight: 600; margin: 0; letter-spacing: -0.01em; text-wrap: balance; }
+  p { margin: 0; }
+  img { max-width: 100%; display: block; }
+  .container { max-width: 1220px; margin: 0 auto; padding: 0 32px; }
+
+  /* ---------- masthead ---------- */
+  .masthead { border-bottom: 2px solid var(--text-primary); }
+  .masthead-inner { display: flex; align-items: center; justify-content: space-between; padding: 18px 0; gap: 24px; }
+  .brand { display: flex; align-items: center; gap: 16px; }
+  a.brand { color: inherit; text-decoration: none; }
+  a.brand:hover { text-decoration: none; }
+  .brand img { height: 76px; width: 76px; object-fit: contain; flex: none; }
+  .brand-word { font-family: var(--font-sans); font-weight: 700; font-size: 34px; letter-spacing: 0.04em; color: var(--text-primary); white-space: nowrap; line-height: 1.1; }
+  .brand-sub { font-family: var(--font-mono); font-weight: 700; font-size: 12px; letter-spacing: 0.35em; text-transform: uppercase; color: var(--text-muted); white-space: nowrap; margin-top: 6px; }
+  .masthead-nav { display: flex; align-items: center; gap: 22px; font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; }
+  .masthead-nav a { color: var(--text-secondary); text-decoration: none; }
+  .masthead-nav a:hover { color: var(--accent-alert-strong); text-decoration: none; }
+
+  .classbar { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 12px 0; background: var(--bg-surface-sunken); border-bottom: 1px solid var(--border-default); font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.09em; text-transform: uppercase; color: var(--text-muted); }
+  .classbar .container { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+
+  .badge { font-family: var(--font-mono); font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 4px 10px; border-radius: 2px; display: inline-block; white-space: nowrap; }
+  .badge-alert { background: var(--accent-alert-bg); color: var(--accent-alert-strong); border: 1px solid var(--accent-alert); }
+  .badge-elevated { background: var(--accent-elevated-bg); color: var(--accent-elevated-strong); border: 1px solid var(--accent-elevated); }
+  .badge-neutral { background: var(--bg-surface); color: var(--text-secondary); border: 1px solid var(--border-default); }
+
+  /* ---------- layout ---------- */
+  .layout { display: grid; grid-template-columns: 1fr; gap: 48px; padding: 40px 0 96px; align-items: start; }
+  @media (min-width: 980px) { .layout { grid-template-columns: 1fr 300px; gap: 64px; } }
+  aside.rail { display: flex; flex-direction: column; gap: 28px; position: static; }
+  @media (min-width: 980px) { aside.rail { position: sticky; top: 24px; } }
+
+  /* ---------- article head ---------- */
+  .memo-id { font-family: var(--font-mono); font-weight: 700; font-size: clamp(22px, 3.2vw, 34px); letter-spacing: 0.04em; text-transform: uppercase; color: var(--accent-alert); margin-bottom: 14px; }
+  .tagrow { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 18px; }
+  .tag { font-family: var(--font-sans); font-size: 13px; font-weight: 500; color: var(--text-secondary); border: 1px solid var(--border-default); border-radius: 999px; padding: 4px 13px; display: inline-block; }
+  h1.headline { font-family: var(--font-serif); font-size: clamp(30px, 4.4vw, 46px); font-weight: 600; line-height: 1.08; letter-spacing: -0.01em; color: var(--text-primary); max-width: 19ch; }
+  .dek { font-family: var(--font-serif); font-style: italic; font-size: 19px; line-height: 1.5; color: var(--text-secondary); margin-top: 16px; max-width: 56ch; }
+  .byline { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 22px; padding-bottom: 24px; border-bottom: 1px solid var(--border-default); font-family: var(--font-mono); font-size: 12px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.06em; }
+
+  /* ---------- article body ---------- */
+  article { max-width: 100%; }
+  .lede { font-family: var(--font-sans); font-size: 19px; line-height: 1.6; color: var(--text-primary); margin-top: 28px; max-width: 66ch; }
+  .prose { font-family: var(--font-sans); font-size: 16px; line-height: 1.7; color: var(--text-secondary); max-width: 66ch; display: flex; flex-direction: column; gap: 18px; }
+  .prose p { margin: 0; }
+  .prose strong { color: var(--text-primary); font-weight: 600; }
+  .prose ul, .prose ol { margin: 0; padding-left: 22px; display: flex; flex-direction: column; gap: 10px; }
+  .prose li::marker { color: var(--text-muted); font-family: var(--font-mono); font-size: 13px; }
+
+  .section { margin-top: 56px; padding-top: 36px; border-top: 2px solid var(--text-primary); max-width: 66ch; }
+  .section h2 { font-size: 27px; margin-bottom: 22px; max-width: 30ch; }
+  .subhead { font-family: var(--font-serif); font-weight: 600; font-size: 19px; color: var(--text-primary); margin-top: 6px; }
+
+  /* ---------- callout ---------- */
+  .callout { border-left: 3px solid var(--border-strong); padding: 2px 0 2px 20px; }
+  .callout-warning { border-left-color: var(--accent-elevated); }
+  .callout-alert { border-left-color: var(--accent-alert); }
+  .callout-label { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 6px; color: var(--text-secondary); }
+  .callout-warning .callout-label { color: var(--accent-elevated-strong); }
+  .callout-alert .callout-label { color: var(--accent-alert-strong); }
+  .callout-body { font-family: var(--font-sans); font-size: 16px; line-height: 1.55; color: var(--text-primary); }
+
+  /* ---------- stat grid ---------- */
+  .statgrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1px; background: var(--border-default); border: 1px solid var(--border-default); margin: 4px 0; }
+  .statgrid .stat { background: var(--bg-surface); padding: 18px 20px; }
+  .stat-label { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); }
+  .stat-value { font-family: var(--font-serif); font-size: 30px; font-weight: 600; color: var(--text-primary); margin-top: 6px; line-height: 1.1; }
+  .stat-delta { font-family: var(--font-mono); font-size: 12px; color: var(--accent-alert-strong); margin-top: 4px; }
+
+  /* ---------- table ---------- */
+  .tablewrap { overflow-x: auto; border: 1px solid var(--border-default); }
+  table.brief { border-collapse: collapse; width: 100%; table-layout: fixed; font-family: var(--font-sans); font-size: 14px; }
+  table.brief th, table.brief td { text-align: left; padding: 12px 16px; border-bottom: 1px solid var(--border-default); vertical-align: top; overflow-wrap: break-word; }
+  table.brief th { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted); background: var(--bg-surface-sunken); font-weight: 600; }
+  table.brief td:first-child { font-weight: 600; color: var(--text-primary); }
+  table.brief th:nth-child(1), table.brief td:nth-child(1) { width: 30%; }
+  table.brief th:nth-child(2), table.brief td:nth-child(2) { width: 16%; }
+  table.brief th:nth-child(3), table.brief td:nth-child(3) { width: 54%; }
+  table.brief tr:last-child td { border-bottom: none; }
+  table.brief tbody tr:nth-child(odd) td { background: var(--bg-surface-sunken); }
+  table.brief .domain { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; padding: 3px 8px; border-radius: 2px; display: inline-block; white-space: normal; line-height: 1.4; }
+  .domain-complicated { background: var(--accent-elevated-bg); color: var(--accent-elevated-strong); }
+  .domain-complex { background: var(--accent-alert-bg); color: var(--accent-alert-strong); }
+  .domain-clear { background: var(--bg-surface-sunken); color: var(--text-secondary); border: 1px solid var(--border-default); }
+
+  /* ---------- exhibits (maps / loops / mermaid) ---------- */
+  figure.exhibit { margin: 8px 0 0; background: var(--exhibit-bg); border: 1px solid var(--exhibit-border); border-radius: 3px; padding: 20px; }
+  figure.exhibit .exhibit-label { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--exhibit-caption); margin-bottom: 12px; }
+  figure.exhibit img { border-radius: 2px; }
+  figure.exhibit figcaption { font-family: var(--font-sans); font-size: 13px; line-height: 1.5; color: var(--exhibit-caption); margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--exhibit-border); }
+  .mermaid { background: var(--exhibit-bg); }
+
+  /* ---------- leverage list ---------- */
+  .tier { margin-top: 28px; }
+  .tier:first-child { margin-top: 8px; }
+  .tier-label { display: flex; align-items: center; gap: 10px; font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-primary); margin-bottom: 14px; }
+  .tier-dot { width: 8px; height: 8px; border-radius: 50%; flex: none; }
+  .tier-dot.high { background: var(--accent-alert); }
+  .tier-dot.medium { background: var(--accent-elevated); }
+  .tier-dot.low { background: var(--text-faint); }
+  .lev-item { display: flex; gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--border-default); }
+  .lev-item:last-child { border-bottom: none; }
+  .lev-num { font-family: var(--font-mono); font-size: 15px; font-weight: 600; color: var(--text-faint); flex: none; width: 22px; }
+  .lev-body { font-family: var(--font-sans); font-size: 15.5px; line-height: 1.65; color: var(--text-secondary); }
+  .lev-body strong { color: var(--text-primary); }
+
+  /* ---------- sources ---------- */
+  .sourcecite { border-top: 1px solid var(--border-default); padding-top: 18px; margin-top: 8px; font-family: var(--font-mono); font-size: 12px; color: var(--text-muted); display: flex; flex-direction: column; gap: 8px; }
+  .sourcecite .cite-label { letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-faint); margin-bottom: 2px; }
+  .sourcelist { display: flex; flex-direction: column; gap: 10px; font-family: var(--font-sans); font-size: 14px; color: var(--text-secondary); }
+  .sourcelist a { color: var(--link); }
+  .sourcelist .n { font-family: var(--font-mono); color: var(--text-faint); margin-right: 8px; }
+
+  /* ---------- sidebar cards ---------- */
+  .card { background: var(--bg-surface); border: 1px solid var(--border-default); border-radius: 3px; padding: 22px; }
+  .card + .card { }
+  .card-title { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 14px; }
+  .meter-row { display: flex; gap: 4px; }
+  .meter-seg { flex: 1; height: 8px; background: var(--border-default); }
+  .meter-seg.on-low { background: var(--accent-elevated); }
+  .meter-seg.on-high { background: var(--accent-alert); }
+  .meter-level { font-family: var(--font-mono); font-size: 14px; font-weight: 600; letter-spacing: 0.04em; margin-top: 10px; }
+  .meter-note { font-family: var(--font-sans); font-size: 13px; line-height: 1.5; color: var(--text-muted); margin-top: 10px; }
+
+  .tocnav { display: flex; flex-direction: column; gap: 13px; }
+  .tocnav a { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.05em; text-transform: uppercase; color: var(--text-secondary); }
+  .tocnav a:hover { color: var(--text-primary); text-decoration: none; }
+
+  .infolist { display: flex; flex-direction: column; gap: 12px; font-size: 13.5px; }
+  .infolist dt { font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-faint); }
+  .infolist dd { margin: 3px 0 0; font-family: var(--font-sans); color: var(--text-secondary); line-height: 1.4; }
+
+  footer.pagefoot { border-top: 2px solid var(--text-primary); margin-top: 32px; padding: 28px 0 40px; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.05em; color: var(--text-faint); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .fade-in { animation: fadeIn 0.4s ease both; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+  }
+</style>
+
+<div class="masthead">
+  <div class="container masthead-inner">
+    <a class="brand" href="/">
+      <img src="/assets/logo.png" alt="Grey Zone" />
+      <div>
+        <div class="brand-word">GREY ZONE</div>
+        <div class="brand-sub">Intelligence &amp; Analytics</div>
+      </div>
+    </a>
+    <nav class="masthead-nav">
+      <a href="/archive.html">Archive</a>
+    </nav>
+  </div>
+</div>
+
+<div class="classbar">
+  <div class="container">
+    <span>Special Report &middot; AI Infrastructure &amp; Water &middot; Australia &middot; 22 Aug 2026</span>
+    <span class="badge badge-alert">Regulatory risk: high</span>
+  </div>
+</div>
+
+<div class="container">
+  <div class="layout">
+    <article>
+      <div class="memo-id">INTEL MEMO 202608221124</div>
+      <div class="tagrow">
+        <span class="tag">Australia</span>
+        <span class="tag">Water security</span>
+        <span class="tag">Data centres</span>
+        <span class="tag">Critical minerals</span>
+      </div>
+      <h1 class="headline">The water number everyone quotes is real &mdash; and structurally misleading</h1>
+      <p class="dek">A sense-making analysis of Australia's AI buildout: Systems Thinking, Cynefin, and Wardley Mapping applied to the water footprint of the AI infrastructure boom &mdash; consumption, discharge, and the governance gap between them.</p>
+      <div class="byline">
+        <span>By Simon &middot; The Sense-Making Desk</span>
+        <span>&middot;</span>
+        <span>22 Aug 2026</span>
+        <span>&middot;</span>
+        <span>~18 min read</span>
+      </div>
+
+      <p class="lede">Australia's AI-driven data centre boom currently uses a small fraction of national water &mdash; an industry estimate of roughly 5.5 billion litres a year for on-site cooling, about 0.04% of national consumption. That headline number is real. It is also structurally misleading in three ways that matter for everything that follows.</p>
+
+      <div class="prose" style="margin-top:20px;">
+        <p>This isn't a policy brief and it isn't a hopepunk story &mdash; it's an attempt to see the terrain clearly enough that both can eventually be built on solid ground. Every claim below is either sourced, or explicitly flagged as an assumption or a gap. Where the evidence disagrees with itself &mdash; it does, more than once &mdash; that's noted rather than smoothed over. Those disagreements are often the most important finding.</p>
+      </div>
+
+      <div id="exec-summary" class="section" style="margin-top:44px; padding-top:32px;">
+        <h2>Executive summary</h2>
+        <div class="prose">
+          <p><strong>1. It's not evenly distributed.</strong> Data centres cluster in Sydney and Melbourne's outer suburbs, on the same drinking-water networks already stressed by drought and urban growth &mdash; not in Australia's water-abundant regions. Sydney Water has told a NSW parliamentary inquiry that cumulative demand from proposed facilities could reach 250 megalitres a day by 2035, and one academic estimate puts pipeline data centres at 15&ndash;20% of Sydney's water supply within a decade if all are built. Melbourne's trajectory is smaller but real: about 0.9% of supply by 2030, up from 0.2%.</p>
+          <p><strong>2. It's growing far faster than the base rate suggests.</strong> Industry projections show water demand more than tripling in five years &mdash; from 5.5 gigalitres to 17 gigalitres &mdash; tracking a data centre pipeline of roughly 90 facilities and 20+ gigawatts of proposed capacity, against roughly 1.9 gigawatts likely to actually be built by 2030. The pipeline is not the delivery date.</p>
+          <p><strong>3. There is no reliable regulatory floor under any of it.</strong> As of the government's own drafting process in mid-2026, there is no completed modelling of data centre impact on agricultural water or food production, no quantified total consumption figure, and no drought-restriction regime equivalent to what farmers already face. Farmers lose water access in dry years by rule; data centres currently do not.</p>
+
+          <div class="statgrid">
+            <div class="stat"><div class="stat-label">On-site cooling, today</div><div class="stat-value">5.5 GL/yr</div><div class="stat-delta">&approx;0.04% of national use</div></div>
+            <div class="stat"><div class="stat-label">Sydney cumulative demand by 2035</div><div class="stat-value">250 ML/day</div><div class="stat-delta">per Sydney Water, to NSW inquiry</div></div>
+            <div class="stat"><div class="stat-label">Sydney supply share, full pipeline</div><div class="stat-value">15&ndash;20%</div><div class="stat-delta">within a decade &mdash; academic estimate</div></div>
+            <div class="stat"><div class="stat-label">Industry water demand, 5-yr</div><div class="stat-value">5.5&rarr;17 GL</div><div class="stat-delta">more than triples</div></div>
+          </div>
+
+          <p>This is the water story. The brief also holds the other pollution types in view, because a "solution" to water can silently create one of them:</p>
+          <ul>
+            <li><strong>Carbon / energy.</strong> Data centre electricity demand is projected to triple by 2030 and reach 12% of the National Electricity Market by 2049&ndash;50. Even with 70% voluntary renewable offsetting, unmatched growth could add 14% to climate pollution above baseline by 2035. This connects directly to water: the "dry cooling" fix that saves water uses more electricity, which &mdash; depending on grid mix &mdash; can mean more emissions or more pressure on generation, including hydro and thermal plants that themselves use water.</li>
+            <li><strong>Upstream extraction.</strong> Australia's critical-minerals mining (lithium, rare earths, copper) feeds both chip fabrication and the renewable/battery buildout AI infrastructure depends on. Rare-earth refining produces roughly 2,000 tonnes of acidic wastewater per tonne of rare-earth oxide, historically discharged into unlined ponds overseas &mdash; China's Bayan Obo, with documented contamination, cancers, and birth defects downstream. Australia is positioning itself to do this "cleaner": lined containment, zero-liquid-discharge design at Iluka's WA refinery. That is a design intention on projects mostly not yet operating at scale, not a proven track record.</li>
+            <li><strong>E-waste.</strong> Not yet well quantified in the Australian sources found &mdash; flagged as a genuine gap, not researched to the same depth here.</li>
+            <li><strong>Land / ecosystem.</strong> Rare-earth ore bodies sit disproportionately in low-water regions, meaning mine siting and water availability are already in tension before AI demand is added to the equation.</li>
+          </ul>
+
+          <div class="callout callout-alert">
+            <div class="callout-label">Central finding</div>
+            <div class="callout-body">The two "solutions" most often proposed &mdash; dry/air cooling and closed-loop liquid cooling &mdash; don't eliminate pollution, they <strong>relocate</strong> it. Dry cooling moves the water cost into the electricity grid. Closed-loop cooling reduces evaporative water loss but concentrates chemical additives &mdash; nitrite inhibitors, glycol &mdash; that, per industry-critical sources, can reach 600&ndash;7,000 ppm in-loop versus a 1 ppm safe drinking limit, creating a toxicity discharge risk in place of a volume consumption problem. There is currently no cooling technology that reduces water consumption, electricity consumption, and chemical discharge risk simultaneously at scale. That's not a reason to give up on elimination &mdash; it's the actual shape of the problem, and pretending otherwise is how well-intentioned advocacy gets picked apart by an engineer in the first five minutes.</div>
+          </div>
+        </div>
+      </div>
+
+      <div id="frame" class="section">
+  <h2>1. Frame</h2>
+  <div class="prose">
+    <p><span class="subhead">Situation, as understood.</span> Australia is in the early-but-accelerating phase of a global AI infrastructure buildout &mdash; hyperscaler capex reaching $660&ndash;725 billion globally in 2026 alone. That buildout has a downstream water footprint (data centre cooling, concentrated on already-stressed urban water networks) and an upstream water footprint (critical-minerals mining and refining feeding chips, batteries, and grid buildout). Both are currently under-regulated relative to the scale of what's proposed.</p>
+
+    <p><span class="subhead">What triggered this now.</span> This analysis serves three audiences at once: building a case toward companies and governments (influence), giving the public grounded hope that better systems are possible (not doom, not hype), and informing a personal career direction &mdash; where sustained effort is best spent. No single existing document appears to serve all three; this is the shared evidentiary base underneath them.</p>
+
+    <p><span class="subhead">Decision or outcome at stake.</span> Not yet a single decision &mdash; this is pre-decision sense-making. But it should produce: a defensible set of claims usable in advocacy toward companies and government; an honest picture of what's genuinely hopeful versus still unproven; and a map of where effort is scarce relative to the size of the problem &mdash; the career-relevant white space.</p>
+
+    <p><span class="subhead">Who owns the outcome.</span> Diffuse, and part of the problem. Water utilities &mdash; Sydney Water, Melbourne Water &mdash; are accountable for supply but not for approving data centres. Planning and development approval sits with state governments. The Commonwealth is drafting national standards, in progress as of mid-2026, but these are not yet in force. Data centre operators &mdash; mostly US hyperscalers (Amazon, Microsoft, Alphabet, Meta, Oracle) plus OpenAI and Anthropic as anchor tenants &mdash; have no binding drought obligations. No single actor currently owns "total water impact of AI infrastructure in Australia." That fragmentation is itself a finding (Section 5).</p>
+
+    <p><span class="subhead">Constraints.</span> This case is being built without institutional resources or authority &mdash; the available leverage is evidence, narrative, and where a career gets pointed, not budget or regulatory power.</p>
+
+    <p><span class="subhead">What's been tried.</span> The Commonwealth is legislating water-efficiency standards for large data centres, but by the government's own account this is proceeding without completed water-impact modelling. Dr Michael Vardon of ANU: <em>"If you haven't got any data, you're probably not going to get the best decisions."</em> That's a live, quotable admission of a Cynefin-relevant condition &mdash; policy is being written under genuine uncertainty, not complicated-but-knowable calculation.</p>
+  </div>
+</div>
+
+
+      <div id="cynefin" class="section">
+  <h2>2. Situate &mdash; Cynefin</h2>
+  <div class="prose">
+    <p>Cynefin sorts a problem by how knowable cause-and-effect is <em>before</em> you act: clear (best practice, obvious), complicated (needs expertise but is analysable), complex (only understandable in retrospect, requires probing), chaotic (act first to stabilise, then sense), or confused/disordered (unclear which of the above it even is).</p>
+
+    <p>This situation is not one domain &mdash; it's at least three, stacked, and treating it as one is the most likely misclassification error.</p>
+
+    <div class="tablewrap">
+      <table class="brief">
+        <thead><tr><th>Sub-problem</th><th>Domain</th><th>Why</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>How much water does data centre X use, given a specified cooling design?</td>
+            <td><span class="domain domain-complicated">Complicated</span></td>
+            <td>Engineering knowable via Water Usage Effectiveness metrics, thermodynamics, and site data. Experts can agree in advance. The data gap here is withheld/uncollected, not unknowable.</td>
+          </tr>
+          <tr>
+            <td>What happens to Sydney's total water system if the full 90-facility pipeline is built, under drought, with current-generation cooling mixes, interacting with population growth and climate change?</td>
+            <td><span class="domain domain-complex">Complex</span></td>
+            <td>Multiple interacting actors, no controlled experiment possible, feedback loops with delays, genuinely emergent &mdash; you find out what happens by watching it unfold. Very likely being treated as complicated ("build a model, get the number") when it's actually complex.</td>
+          </tr>
+          <tr>
+            <td>Will closed-loop cooling's chemical discharge become a second-order water pollution crisis once facilities scale and blow-down events accumulate?</td>
+            <td><span class="domain domain-complex">Complex &rarr; confused</span></td>
+            <td>Genuine expert disagreement exists in the sources themselves &mdash; vendors and Microsoft's own CEO frame closed-loop as solving the water problem; a water-monitoring vendor (KETOS) frames the same technology as a "chemical time bomb." The disagreement is about scale, monitoring adequacy, and time horizon &mdash; not yet resolved.</td>
+          </tr>
+          <tr>
+            <td>Should there be a national drought-restriction regime for data centres, parallel to agriculture?</td>
+            <td><span class="domain domain-clear">Complicated &rarr; clear, politically</span></td>
+            <td>The mechanism &mdash; extend existing water-entitlement/restriction frameworks &mdash; is not novel; Australia already does this for irrigators. A policy-transfer problem, not a discovery problem. The obstacle is political will and lobbying power, not knowledge.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout">
+      <div class="callout-label">Misclassification risk</div>
+      <div class="callout-body">The government's current legislative approach &mdash; mandatory water-efficiency standards, drafted before impact modelling exists &mdash; treats a complex problem as if it were complicated, as though the right static rule can be worked out analytically and imposed. Vardon's "no data" complaint is a symptom of this. A complex-domain-appropriate response would instead run small, monitored, reversible probes &mdash; staged approvals tied to real-time water reporting, sunset clauses, mandatory drought-protocol disclosure before build &mdash; and adjust based on what's observed, rather than committing to a national standard now and hoping the number was right. This is a genuine, evidence-grounded critique for a government audience: not "you're not doing enough," but "you're using the wrong kind of instrument for this kind of problem."</div>
+    </div>
+
+    <p style="font-size:14px; color:var(--text-muted);"><strong>Assumption flagged:</strong> the legislative approach is inferred to be one-shot/static from the reporting; if the actual draft standards include staged review or sunset mechanisms, that changes this assessment &mdash; worth verifying against the primary legislative text before using this claim in advocacy.</p>
+
+    <p>Plotting the sub-problems against expert agreement and whether a known playbook exists makes the misclassification argument visible rather than asserted &mdash; "Where policy acts now" sits far from "Aggregate water system," the same gap the table above describes in words.</p>
+
+    <figure class="exhibit">
+      <div class="exhibit-label">Exhibit &middot; Cynefin placement, AI water sub-problems</div>
+      <pre class="mermaid">
+%%{init: {'theme':'base', 'themeVariables': {'background':'#FBF9F4','primaryColor':'#F4F1EA','primaryTextColor':'#14161A','primaryBorderColor':'#B7B0A0','lineColor':'#8B8F96','quadrant1Fill':'#F4F1EA','quadrant2Fill':'#EFE3C8','quadrant3Fill':'#F1DEDB','quadrant4Fill':'#E9E4D8','quadrant1TextFill':'#2B2E33','quadrant2TextFill':'#7A5410','quadrant3TextFill':'#7A1E17','quadrant4TextFill':'#2B2E33','quadrantPointFill':'#A6291F','quadrantPointTextFill':'#14161A','quadrantXAxisTextFill':'#5B6068','quadrantYAxisTextFill':'#5B6068','quadrantTitleFill':'#14161A','quadrantInternalBorderStrokeFill':'#B7B0A0','quadrantExternalBorderStrokeFill':'#B7B0A0'}}}%%
+quadrantChart
+    title Cynefin placement -- AI water pollution sub-problems
+    x-axis Low expert agreement --> High expert agreement
+    y-axis Novel or emergent --> Known playbook exists
+    quadrant-1 Clear
+    quadrant-2 Complicated
+    quadrant-3 Complex
+    quadrant-4 Chaotic
+    WUE Measurement: [0.35, 0.75]
+    Aggregate Water System: [0.3, 0.3]
+    Closed Loop Chemistry: [0.45, 0.35]
+    Drought Policy Transfer: [0.6, 0.8]
+    Where Policy Acts Now: [0.55, 0.85]
+      </pre>
+      <figcaption>Sub-problems inside the AI-driven data centre water chain, plotted by expert agreement and whether a known playbook exists.</figcaption>
+    </figure>
+
+    <p>The same pattern repeats one level upstream, independently &mdash; worth noting because a pattern found twice by separate reasoning is stronger evidence than either instance alone.</p>
+
+    <figure class="exhibit">
+      <div class="exhibit-label">Exhibit &middot; Cynefin placement, critical minerals sub-problems</div>
+      <pre class="mermaid">
+%%{init: {'theme':'base', 'themeVariables': {'background':'#FBF9F4','primaryColor':'#F4F1EA','primaryTextColor':'#14161A','primaryBorderColor':'#B7B0A0','lineColor':'#8B8F96','quadrant1Fill':'#F4F1EA','quadrant2Fill':'#EFE3C8','quadrant3Fill':'#F1DEDB','quadrant4Fill':'#E9E4D8','quadrant1TextFill':'#2B2E33','quadrant2TextFill':'#7A5410','quadrant3TextFill':'#7A1E17','quadrant4TextFill':'#2B2E33','quadrantPointFill':'#A6291F','quadrantPointTextFill':'#14161A','quadrantXAxisTextFill':'#5B6068','quadrantYAxisTextFill':'#5B6068','quadrantTitleFill':'#14161A','quadrantInternalBorderStrokeFill':'#B7B0A0','quadrantExternalBorderStrokeFill':'#B7B0A0'}}}%%
+quadrantChart
+    title Cynefin placement -- critical minerals water sub-problems
+    x-axis Low expert agreement --> High expert agreement
+    y-axis Novel or emergent --> Known playbook exists
+    quadrant-1 Clear
+    quadrant-2 Complicated
+    quadrant-3 Complex
+    quadrant-4 Chaotic
+    Refining Waste Volume: [0.4, 0.7]
+    Zero Discharge At Scale: [0.3, 0.35]
+    Regional Water Cumulative: [0.25, 0.3]
+    Containment Standard Adoption: [0.65, 0.75]
+    Where Investment Acts Now: [0.6, 0.8]
+      </pre>
+      <figcaption>Sub-problems inside the critical-minerals mining and refining water chain, plotted the same way.</figcaption>
+    </figure>
+  </div>
+</div>
+
+
+      <div id="wardley" class="section">
+  <h2>3. Map the terrain &mdash; Wardley map</h2>
+  <div class="prose">
+    <p>Two separate value chains matter here &mdash; and shouldn't be collapsed, because they have different users, different owners, and different evolution stages. Wardley mapping plots components from genesis (novel, uncertain, custom-built) through custom-built and product to commodity/utility (standardised, well-understood, interchangeable) &mdash; evolution stage indicates how much room there is for competitive differentiation versus how ripe something is for regulation-as-utility.</p>
+
+    <p>Both maps below went through several rounds of correction after initial drafting &mdash; visibility placements were re-derived from actual chain-dependency depth, not narrative salience &mdash; and each map was extended with a second anchor, <strong>Reduce Pollution</strong>, connected by "undermines" edges from the pollution outputs each chain actually produces. That second anchor turns each map from descriptive (what serves the user) into diagnostic (what that same chain is doing to the goal that actually matters), with the two anchors sitting in direct visual tension, connected through the same components.</p>
+
+    <p class="subhead">Map A &mdash; downstream: data centre water consumption chain</p>
+    <figure class="exhibit">
+      <div class="exhibit-label">Exhibit &middot; Wardley map, AI data centre water chain</div>
+      <img src="data:image/png;base64,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
