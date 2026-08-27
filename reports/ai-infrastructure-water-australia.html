@@ -133,7 +133,8 @@
   .callout-body { font-family: var(--font-sans); font-size: 16px; line-height: 1.55; color: var(--text-primary); }
 
   /* ---------- stat grid ---------- */
-  .statgrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1px; background: var(--border-default); border: 1px solid var(--border-default); margin: 4px 0; }
+  .statgrid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--border-default); border: 1px solid var(--border-default); margin: 4px 0; }
+  @media (max-width: 560px) { .statgrid { grid-template-columns: 1fr; } }
   .statgrid .stat { background: var(--bg-surface); padding: 18px 20px; }
   .stat-label { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); }
   .stat-value { font-family: var(--font-serif); font-size: 30px; font-weight: 600; color: var(--text-primary); margin-top: 6px; line-height: 1.1; }
@@ -351,22 +352,7 @@
 
     <figure class="exhibit">
       <div class="exhibit-label">Exhibit &middot; Cynefin placement, AI water sub-problems</div>
-      <pre class="mermaid">
-%%{init: {'theme':'base', 'themeVariables': {'background':'#FBF9F4','primaryColor':'#F4F1EA','primaryTextColor':'#14161A','primaryBorderColor':'#B7B0A0','lineColor':'#8B8F96','quadrant1Fill':'#F4F1EA','quadrant2Fill':'#EFE3C8','quadrant3Fill':'#F1DEDB','quadrant4Fill':'#E9E4D8','quadrant1TextFill':'#2B2E33','quadrant2TextFill':'#7A5410','quadrant3TextFill':'#7A1E17','quadrant4TextFill':'#2B2E33','quadrantPointFill':'#A6291F','quadrantPointTextFill':'#14161A','quadrantXAxisTextFill':'#5B6068','quadrantYAxisTextFill':'#5B6068','quadrantTitleFill':'#14161A','quadrantInternalBorderStrokeFill':'#B7B0A0','quadrantExternalBorderStrokeFill':'#B7B0A0'}}}%%
-quadrantChart
-    title Cynefin placement -- AI water pollution sub-problems
-    x-axis Low expert agreement --> High expert agreement
-    y-axis Novel or emergent --> Known playbook exists
-    quadrant-1 Clear
-    quadrant-2 Complicated
-    quadrant-3 Complex
-    quadrant-4 Chaotic
-    WUE Measurement: [0.35, 0.75]
-    Aggregate Water System: [0.3, 0.3]
-    Closed Loop Chemistry: [0.45, 0.35]
-    Drought Policy Transfer: [0.6, 0.8]
-    Where Policy Acts Now: [0.55, 0.85]
-      </pre>
+      <img id="fig-cynefin-ai-water" data-parts="1" src="" alt="Quadrant chart plotting AI water pollution sub-problems by expert agreement and whether a known playbook exists" />
       <figcaption>Sub-problems inside the AI-driven data centre water chain, plotted by expert agreement and whether a known playbook exists.</figcaption>
     </figure>
 
@@ -374,22 +360,7 @@ quadrantChart
 
     <figure class="exhibit">
       <div class="exhibit-label">Exhibit &middot; Cynefin placement, critical minerals sub-problems</div>
-      <pre class="mermaid">
-%%{init: {'theme':'base', 'themeVariables': {'background':'#FBF9F4','primaryColor':'#F4F1EA','primaryTextColor':'#14161A','primaryBorderColor':'#B7B0A0','lineColor':'#8B8F96','quadrant1Fill':'#F4F1EA','quadrant2Fill':'#EFE3C8','quadrant3Fill':'#F1DEDB','quadrant4Fill':'#E9E4D8','quadrant1TextFill':'#2B2E33','quadrant2TextFill':'#7A5410','quadrant3TextFill':'#7A1E17','quadrant4TextFill':'#2B2E33','quadrantPointFill':'#A6291F','quadrantPointTextFill':'#14161A','quadrantXAxisTextFill':'#5B6068','quadrantYAxisTextFill':'#5B6068','quadrantTitleFill':'#14161A','quadrantInternalBorderStrokeFill':'#B7B0A0','quadrantExternalBorderStrokeFill':'#B7B0A0'}}}%%
-quadrantChart
-    title Cynefin placement -- critical minerals water sub-problems
-    x-axis Low expert agreement --> High expert agreement
-    y-axis Novel or emergent --> Known playbook exists
-    quadrant-1 Clear
-    quadrant-2 Complicated
-    quadrant-3 Complex
-    quadrant-4 Chaotic
-    Refining Waste Volume: [0.4, 0.7]
-    Zero Discharge At Scale: [0.3, 0.35]
-    Regional Water Cumulative: [0.25, 0.3]
-    Containment Standard Adoption: [0.65, 0.75]
-    Where Investment Acts Now: [0.6, 0.8]
-      </pre>
+      <img id="fig-cynefin-critical-minerals" data-parts="1" src="" alt="Quadrant chart plotting critical minerals water sub-problems by expert agreement and whether a known playbook exists" />
       <figcaption>Sub-problems inside the critical-minerals mining and refining water chain, plotted the same way.</figcaption>
     </figure>
   </div>
@@ -406,7 +377,7 @@ quadrantChart
     <p class="subhead">Map A &mdash; downstream: data centre water consumption chain</p>
     <figure class="exhibit">
       <div class="exhibit-label">Exhibit &middot; Wardley map, AI data centre water chain</div>
-      <img id="fig-wardley-map-a" data-parts="6" src="" alt="" />
+      <img id="fig-wardley-map-a" data-parts="1" src="" alt="Wardley map of the AI data centre water chain, from AI model demand down to cooling systems, water loss, chemical discharge, grid emissions and electricity grid" />
       <figcaption><strong>What's evidenced vs. guessed:</strong> the anchor &rarr; model &rarr; compute &rarr; facility spine and the "Water Disclosure" placement at genesis are directly evidenced &mdash; the government itself says the modelling doesn't exist yet. The electricity-grid water linkage (thermal/hydro generation consuming water) is a systems-thinking inference, not yet checked against Australian generation-mix water data &mdash; flagged as an assumption to verify.</figcaption>
     </figure>
 
@@ -420,7 +391,7 @@ quadrantChart
     <p class="subhead" style="margin-top:8px;">Map B &mdash; upstream: critical minerals / mining water chain</p>
     <figure class="exhibit">
       <div class="exhibit-label">Exhibit &middot; Wardley map, critical minerals water chain</div>
-      <img id="fig-wardley-map-b" data-parts="5" src="" alt="" />
+      <img id="fig-wardley-map-b" data-parts="1" src="" alt="Wardley map of the critical minerals water chain, from ore extraction and refining down to chip fabs, battery makers, and pollution outputs" />
       <figcaption>Australia's rare-earth refining strategy plotted against water and waste intensity, positioned relative to the same Reduce Pollution counter-anchor used in Map A.</figcaption>
     </figure>
 
@@ -440,7 +411,7 @@ quadrantChart
     <p class="subhead">Loop 1 &mdash; the siting-mismatch reinforcing loop (data centres)</p>
     <figure class="exhibit">
       <div class="exhibit-label">Exhibit &middot; causal loop diagram &mdash; The Growth Engine and the Siting/Water Loop</div>
-      <img id="fig-loop-1" data-parts="4" src="" alt="" />
+      <img id="fig-loop-1" data-parts="1" src="" alt="Causal loop diagram showing the Growth Engine reinforcing loop and the Missing Drought-Restriction loop, joined by a one-way link" />
       <figcaption>Two separate closed loops joined by a single one-way link, not one combined cycle.</figcaption>
     </figure>
 
@@ -454,7 +425,7 @@ quadrantChart
     <p class="subhead" style="margin-top:8px;">Loop 2 &mdash; the cooling-tradeoff shell game (no true balancing loop yet)</p>
     <figure class="exhibit">
       <div class="exhibit-label">Exhibit &middot; causal loop diagram &mdash; The Cooling Shell Game</div>
-      <img id="fig-loop-2" data-parts="4" src="" alt="" />
+      <img id="fig-loop-2" data-parts="1" src="" alt="Causal loop diagram showing the Water-Relief balancing loop, the Delayed Discharge reinforcing loop, and the open Displaced Burden chain into grid strain" />
       <figcaption>Only the closed-loop branch closes a cycle back onto public pressure; the dry-cooling branch dead-ends into grid strain.</figcaption>
     </figure>
 
@@ -465,7 +436,7 @@ quadrantChart
     <p class="subhead" style="margin-top:8px;">Loop 3 &mdash; the "no one owns the whole system" gap</p>
     <figure class="exhibit">
       <div class="exhibit-label">Exhibit &middot; diagram &mdash; The Missing Owner</div>
-      <img id="fig-loop-3" data-parts="3" src="" alt="" />
+      <img id="fig-loop-3" data-parts="1" src="" alt="Diagram of the No-One's-Watching chain: an open sequence from data centre operators through connection applications and facility approvals to cumulative pipeline exposure, with no feedback loop" />
       <figcaption>Deliberately zero closed loops &mdash; the point is that no feedback path currently connects these actors.</figcaption>
     </figure>
 
