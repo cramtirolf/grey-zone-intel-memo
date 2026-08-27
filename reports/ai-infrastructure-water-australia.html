@@ -1,0 +1,611 @@
+<title>AI Infrastructure &amp; Water: Australia</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+
+  :root {
+    --paper-50: #FBF9F4;
+    --paper-100: #F4F1EA;
+    --paper-200: #E9E4D8;
+    --ink-900: #14161A;
+    --ink-700: #2B2E33;
+    --slate-600: #5B6068;
+    --slate-400: #8B8F96;
+    --slate-200: #C7C9CD;
+    --line-300: #D9D4C8;
+    --line-500: #B7B0A0;
+    --signal-700: #7A1E17;
+    --signal-500: #A6291F;
+    --signal-100: #F1DEDB;
+    --amber-700: #7A5410;
+    --amber-500: #9C6B14;
+    --amber-100: #EFE3C8;
+    --navy-900: #131F2B;
+    --navy-700: #1B2A3B;
+
+    --bg-page: var(--paper-100);
+    --bg-surface: var(--paper-50);
+    --bg-surface-sunken: var(--paper-200);
+    --bg-inverse: var(--ink-900);
+    --text-primary: var(--ink-900);
+    --text-secondary: var(--ink-700);
+    --text-muted: var(--slate-600);
+    --text-faint: var(--slate-400);
+    --text-inverse: var(--paper-50);
+    --border-default: var(--line-300);
+    --border-strong: var(--line-500);
+    --accent-alert: var(--signal-500);
+    --accent-alert-bg: var(--signal-100);
+    --accent-alert-strong: var(--signal-700);
+    --accent-elevated: var(--amber-500);
+    --accent-elevated-bg: var(--amber-100);
+    --accent-elevated-strong: var(--amber-700);
+    --link: var(--navy-700);
+    --link-hover: var(--ink-900);
+
+    --font-serif: 'Newsreader', 'PT Serif', Georgia, serif;
+    --font-sans: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
+    --font-mono: 'IBM Plex Mono', 'SF Mono', Consolas, monospace;
+
+    /* Grey Zone is a committed single-theme brand -- paper + ink, no dark
+       variant in the source design system -- so this page intentionally
+       does not branch on prefers-color-scheme. See brand readme. */
+    --exhibit-bg: var(--paper-50);
+    --exhibit-border: var(--line-300);
+    --exhibit-text: var(--ink-900);
+    --exhibit-caption: var(--slate-600);
+  }
+
+  * { box-sizing: border-box; }
+  html { background: var(--bg-page); }
+  body {
+    background: var(--bg-page);
+    color: var(--text-primary);
+    font-family: var(--font-sans);
+    font-size: 16px;
+    line-height: 1.55;
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--link); text-decoration: none; }
+  a:hover { color: var(--link-hover); text-decoration: underline; }
+  a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px solid var(--accent-alert); outline-offset: 2px; }
+  ::selection { background: var(--accent-elevated-bg); }
+  h1, h2, h3, h4 { font-family: var(--font-serif); font-weight: 600; margin: 0; letter-spacing: -0.01em; text-wrap: balance; }
+  p { margin: 0; }
+  img { max-width: 100%; display: block; }
+  .container { max-width: 1220px; margin: 0 auto; padding: 0 32px; }
+
+  /* ---------- masthead ---------- */
+  .masthead { border-bottom: 2px solid var(--text-primary); }
+  .masthead-inner { display: flex; align-items: center; justify-content: space-between; padding: 18px 0; gap: 24px; }
+  .brand { display: flex; align-items: center; gap: 16px; }
+  a.brand { color: inherit; text-decoration: none; }
+  a.brand:hover { text-decoration: none; }
+  .brand img { height: 76px; width: 76px; object-fit: contain; flex: none; }
+  .brand-word { font-family: var(--font-sans); font-weight: 700; font-size: 34px; letter-spacing: 0.04em; color: var(--text-primary); white-space: nowrap; line-height: 1.1; }
+  .brand-sub { font-family: var(--font-mono); font-weight: 700; font-size: 12px; letter-spacing: 0.35em; text-transform: uppercase; color: var(--text-muted); white-space: nowrap; margin-top: 6px; }
+  .masthead-nav { display: flex; align-items: center; gap: 22px; font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; }
+  .masthead-nav a { color: var(--text-secondary); text-decoration: none; }
+  .masthead-nav a:hover { color: var(--accent-alert-strong); text-decoration: none; }
+
+  .classbar { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 12px 0; background: var(--bg-surface-sunken); border-bottom: 1px solid var(--border-default); font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.09em; text-transform: uppercase; color: var(--text-muted); }
+  .classbar .container { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+
+  .badge { font-family: var(--font-mono); font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 4px 10px; border-radius: 2px; display: inline-block; white-space: nowrap; }
+  .badge-alert { background: var(--accent-alert-bg); color: var(--accent-alert-strong); border: 1px solid var(--accent-alert); }
+  .badge-elevated { background: var(--accent-elevated-bg); color: var(--accent-elevated-strong); border: 1px solid var(--accent-elevated); }
+  .badge-neutral { background: var(--bg-surface); color: var(--text-secondary); border: 1px solid var(--border-default); }
+
+  /* ---------- layout ---------- */
+  .layout { display: grid; grid-template-columns: 1fr; gap: 48px; padding: 40px 0 96px; align-items: start; }
+  @media (min-width: 980px) { .layout { grid-template-columns: 1fr 300px; gap: 64px; } }
+  aside.rail { display: flex; flex-direction: column; gap: 28px; position: static; }
+  @media (min-width: 980px) { aside.rail { position: sticky; top: 24px; } }
+
+  /* ---------- article head ---------- */
+  .memo-id { font-family: var(--font-mono); font-weight: 700; font-size: clamp(22px, 3.2vw, 34px); letter-spacing: 0.04em; text-transform: uppercase; color: var(--accent-alert); margin-bottom: 14px; }
+  .tagrow { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 18px; }
+  .tag { font-family: var(--font-sans); font-size: 13px; font-weight: 500; color: var(--text-secondary); border: 1px solid var(--border-default); border-radius: 999px; padding: 4px 13px; display: inline-block; }
+  h1.headline { font-family: var(--font-serif); font-size: clamp(30px, 4.4vw, 46px); font-weight: 600; line-height: 1.08; letter-spacing: -0.01em; color: var(--text-primary); max-width: 19ch; }
+  .dek { font-family: var(--font-serif); font-style: italic; font-size: 19px; line-height: 1.5; color: var(--text-secondary); margin-top: 16px; max-width: 56ch; }
+  .byline { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 22px; padding-bottom: 24px; border-bottom: 1px solid var(--border-default); font-family: var(--font-mono); font-size: 12px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.06em; }
+
+  /* ---------- article body ---------- */
+  article { max-width: 100%; }
+  .lede { font-family: var(--font-sans); font-size: 19px; line-height: 1.6; color: var(--text-primary); margin-top: 28px; max-width: 66ch; }
+  .prose { font-family: var(--font-sans); font-size: 16px; line-height: 1.7; color: var(--text-secondary); max-width: 66ch; display: flex; flex-direction: column; gap: 18px; }
+  .prose p { margin: 0; }
+  .prose strong { color: var(--text-primary); font-weight: 600; }
+  .prose ul, .prose ol { margin: 0; padding-left: 22px; display: flex; flex-direction: column; gap: 10px; }
+  .prose li::marker { color: var(--text-muted); font-family: var(--font-mono); font-size: 13px; }
+
+  .section { margin-top: 56px; padding-top: 36px; border-top: 2px solid var(--text-primary); max-width: 66ch; }
+  .section h2 { font-size: 27px; margin-bottom: 22px; max-width: 30ch; }
+  .subhead { font-family: var(--font-serif); font-weight: 600; font-size: 19px; color: var(--text-primary); margin-top: 6px; }
+
+  /* ---------- callout ---------- */
+  .callout { border-left: 3px solid var(--border-strong); padding: 2px 0 2px 20px; }
+  .callout-warning { border-left-color: var(--accent-elevated); }
+  .callout-alert { border-left-color: var(--accent-alert); }
+  .callout-label { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 6px; color: var(--text-secondary); }
+  .callout-warning .callout-label { color: var(--accent-elevated-strong); }
+  .callout-alert .callout-label { color: var(--accent-alert-strong); }
+  .callout-body { font-family: var(--font-sans); font-size: 16px; line-height: 1.55; color: var(--text-primary); }
+
+  /* ---------- stat grid ---------- */
+  .statgrid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--border-default); border: 1px solid var(--border-default); margin: 4px 0; }
+  @media (max-width: 560px) { .statgrid { grid-template-columns: 1fr; } }
+  .statgrid .stat { background: var(--bg-surface); padding: 18px 20px; }
+  .stat-label { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); }
+  .stat-value { font-family: var(--font-serif); font-size: 30px; font-weight: 600; color: var(--text-primary); margin-top: 6px; line-height: 1.1; }
+  .stat-delta { font-family: var(--font-mono); font-size: 12px; color: var(--accent-alert-strong); margin-top: 4px; }
+
+  /* ---------- table ---------- */
+  .tablewrap { overflow-x: auto; border: 1px solid var(--border-default); }
+  table.brief { border-collapse: collapse; width: 100%; table-layout: fixed; font-family: var(--font-sans); font-size: 14px; }
+  table.brief th, table.brief td { text-align: left; padding: 12px 16px; border-bottom: 1px solid var(--border-default); vertical-align: top; overflow-wrap: break-word; }
+  table.brief th { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted); background: var(--bg-surface-sunken); font-weight: 600; }
+  table.brief td:first-child { font-weight: 600; color: var(--text-primary); }
+  table.brief th:nth-child(1), table.brief td:nth-child(1) { width: 30%; }
+  table.brief th:nth-child(2), table.brief td:nth-child(2) { width: 16%; }
+  table.brief th:nth-child(3), table.brief td:nth-child(3) { width: 54%; }
+  table.brief tr:last-child td { border-bottom: none; }
+  table.brief tbody tr:nth-child(odd) td { background: var(--bg-surface-sunken); }
+  table.brief .domain { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; padding: 3px 8px; border-radius: 2px; display: inline-block; white-space: normal; line-height: 1.4; }
+  .domain-complicated { background: var(--accent-elevated-bg); color: var(--accent-elevated-strong); }
+  .domain-complex { background: var(--accent-alert-bg); color: var(--accent-alert-strong); }
+  .domain-clear { background: var(--bg-surface-sunken); color: var(--text-secondary); border: 1px solid var(--border-default); }
+
+  /* ---------- exhibits (maps / loops / mermaid) ---------- */
+  figure.exhibit { margin: 8px 0 0; background: var(--exhibit-bg); border: 1px solid var(--exhibit-border); border-radius: 3px; padding: 20px; }
+  figure.exhibit .exhibit-label { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--exhibit-caption); margin-bottom: 12px; }
+  figure.exhibit img { border-radius: 2px; }
+  figure.exhibit figcaption { font-family: var(--font-sans); font-size: 13px; line-height: 1.5; color: var(--exhibit-caption); margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--exhibit-border); }
+  .mermaid { background: var(--exhibit-bg); }
+
+  /* ---------- leverage list ---------- */
+  .tier { margin-top: 28px; }
+  .tier:first-child { margin-top: 8px; }
+  .tier-label { display: flex; align-items: center; gap: 10px; font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-primary); margin-bottom: 14px; }
+  .tier-dot { width: 8px; height: 8px; border-radius: 50%; flex: none; }
+  .tier-dot.high { background: var(--accent-alert); }
+  .tier-dot.medium { background: var(--accent-elevated); }
+  .tier-dot.low { background: var(--text-faint); }
+  .lev-item { display: flex; gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--border-default); }
+  .lev-item:last-child { border-bottom: none; }
+  .lev-num { font-family: var(--font-mono); font-size: 15px; font-weight: 600; color: var(--text-faint); flex: none; width: 22px; }
+  .lev-body { font-family: var(--font-sans); font-size: 15.5px; line-height: 1.65; color: var(--text-secondary); }
+  .lev-body strong { color: var(--text-primary); }
+
+  /* ---------- sources ---------- */
+  .sourcecite { border-top: 1px solid var(--border-default); padding-top: 18px; margin-top: 8px; font-family: var(--font-mono); font-size: 12px; color: var(--text-muted); display: flex; flex-direction: column; gap: 8px; }
+  .sourcecite .cite-label { letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-faint); margin-bottom: 2px; }
+  .sourcelist { display: flex; flex-direction: column; gap: 10px; font-family: var(--font-sans); font-size: 14px; color: var(--text-secondary); }
+  .sourcelist a { color: var(--link); }
+  .sourcelist .n { font-family: var(--font-mono); color: var(--text-faint); margin-right: 8px; }
+
+  /* ---------- sidebar cards ---------- */
+  .card { background: var(--bg-surface); border: 1px solid var(--border-default); border-radius: 3px; padding: 22px; }
+  .card + .card { }
+  .card-title { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 14px; }
+  .meter-row { display: flex; gap: 4px; }
+  .meter-seg { flex: 1; height: 8px; background: var(--border-default); }
+  .meter-seg.on-low { background: var(--accent-elevated); }
+  .meter-seg.on-high { background: var(--accent-alert); }
+  .meter-level { font-family: var(--font-mono); font-size: 14px; font-weight: 600; letter-spacing: 0.04em; margin-top: 10px; }
+  .meter-note { font-family: var(--font-sans); font-size: 13px; line-height: 1.5; color: var(--text-muted); margin-top: 10px; }
+
+  .tocnav { display: flex; flex-direction: column; gap: 13px; }
+  .tocnav a { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.05em; text-transform: uppercase; color: var(--text-secondary); }
+  .tocnav a:hover { color: var(--text-primary); text-decoration: none; }
+
+  .infolist { display: flex; flex-direction: column; gap: 12px; font-size: 13.5px; }
+  .infolist dt { font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-faint); }
+  .infolist dd { margin: 3px 0 0; font-family: var(--font-sans); color: var(--text-secondary); line-height: 1.4; }
+
+  footer.pagefoot { border-top: 2px solid var(--text-primary); margin-top: 32px; padding: 28px 0 40px; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.05em; color: var(--text-faint); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .fade-in { animation: fadeIn 0.4s ease both; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+  }
+</style>
+
+<div class="masthead">
+  <div class="container masthead-inner">
+    <a class="brand" href="/">
+      <img src="/assets/logo.png" alt="Grey Zone" />
+      <div>
+        <div class="brand-word">GREY ZONE</div>
+        <div class="brand-sub">Intelligence &amp; Analytics</div>
+      </div>
+    </a>
+    <nav class="masthead-nav">
+      <a href="/archive.html">Archive</a>
+    </nav>
+  </div>
+</div>
+
+<div class="classbar">
+  <div class="container">
+    <span>Special Report &middot; AI Infrastructure &amp; Water &middot; Australia &middot; 22 Aug 2026</span>
+    <span class="badge badge-alert">Regulatory risk: high</span>
+  </div>
+</div>
+
+<div class="container">
+  <div class="layout">
+    <article>
+      <div class="memo-id">INTEL MEMO 202608221124</div>
+      <div class="tagrow">
+        <span class="tag">Australia</span>
+        <span class="tag">Water security</span>
+        <span class="tag">Data centres</span>
+        <span class="tag">Critical minerals</span>
+      </div>
+      <h1 class="headline">The water number everyone quotes is real &mdash; and structurally misleading</h1>
+      <p class="dek">A sense-making analysis of Australia's AI buildout: Systems Thinking, Cynefin, and Wardley Mapping applied to the water footprint of the AI infrastructure boom &mdash; consumption, discharge, and the governance gap between them.</p>
+      <div class="byline">
+        <span>By Simon &middot; The Sense-Making Desk</span>
+        <span>&middot;</span>
+        <span>22 Aug 2026</span>
+        <span>&middot;</span>
+        <span>~18 min read</span>
+      </div>
+
+      <p class="lede">Australia's AI-driven data centre boom currently uses a small fraction of national water &mdash; an industry estimate of roughly 5.5 billion litres a year for on-site cooling, about 0.04% of national consumption. That headline number is real. It is also structurally misleading in three ways that matter for everything that follows.</p>
+
+      <div class="prose" style="margin-top:20px;">
+        <p>This isn't a policy brief and it isn't a hopepunk story &mdash; it's an attempt to see the terrain clearly enough that both can eventually be built on solid ground. Every claim below is either sourced, or explicitly flagged as an assumption or a gap. Where the evidence disagrees with itself &mdash; it does, more than once &mdash; that's noted rather than smoothed over. Those disagreements are often the most important finding.</p>
+      </div>
+
+      <div id="exec-summary" class="section" style="margin-top:44px; padding-top:32px;">
+        <h2>Executive summary</h2>
+        <div class="prose">
+          <p><strong>1. It's not evenly distributed.</strong> Data centres cluster in Sydney and Melbourne's outer suburbs, on the same drinking-water networks already stressed by drought and urban growth &mdash; not in Australia's water-abundant regions. Sydney Water has told a NSW parliamentary inquiry that cumulative demand from proposed facilities could reach 250 megalitres a day by 2035, and one academic estimate puts pipeline data centres at 15&ndash;20% of Sydney's water supply within a decade if all are built. Melbourne's trajectory is smaller but real: about 0.9% of supply by 2030, up from 0.2%.</p>
+          <p><strong>2. It's growing far faster than the base rate suggests.</strong> Industry projections show water demand more than tripling in five years &mdash; from 5.5 gigalitres to 17 gigalitres &mdash; tracking a data centre pipeline of roughly 90 facilities and 20+ gigawatts of proposed capacity, against roughly 1.9 gigawatts likely to actually be built by 2030. The pipeline is not the delivery date.</p>
+          <p><strong>3. There is no reliable regulatory floor under any of it.</strong> As of the government's own drafting process in mid-2026, there is no completed modelling of data centre impact on agricultural water or food production, no quantified total consumption figure, and no drought-restriction regime equivalent to what farmers already face. Farmers lose water access in dry years by rule; data centres currently do not.</p>
+
+          <div class="statgrid">
+            <div class="stat"><div class="stat-label">On-site cooling, today</div><div class="stat-value">5.5 GL/yr</div><div class="stat-delta">&approx;0.04% of national use</div></div>
+            <div class="stat"><div class="stat-label">Sydney cumulative demand by 2035</div><div class="stat-value">250 ML/day</div><div class="stat-delta">per Sydney Water, to NSW inquiry</div></div>
+            <div class="stat"><div class="stat-label">Sydney supply share, full pipeline</div><div class="stat-value">15&ndash;20%</div><div class="stat-delta">within a decade &mdash; academic estimate</div></div>
+            <div class="stat"><div class="stat-label">Industry water demand, 5-yr</div><div class="stat-value">5.5&rarr;17 GL</div><div class="stat-delta">more than triples</div></div>
+          </div>
+
+          <p>This is the water story. The brief also holds the other pollution types in view, because a "solution" to water can silently create one of them:</p>
+          <ul>
+            <li><strong>Carbon / energy.</strong> Data centre electricity demand is projected to triple by 2030 and reach 12% of the National Electricity Market by 2049&ndash;50. Even with 70% voluntary renewable offsetting, unmatched growth could add 14% to climate pollution above baseline by 2035. This connects directly to water: the "dry cooling" fix that saves water uses more electricity, which &mdash; depending on grid mix &mdash; can mean more emissions or more pressure on generation, including hydro and thermal plants that themselves use water.</li>
+            <li><strong>Upstream extraction.</strong> Australia's critical-minerals mining (lithium, rare earths, copper) feeds both chip fabrication and the renewable/battery buildout AI infrastructure depends on. Rare-earth refining produces roughly 2,000 tonnes of acidic wastewater per tonne of rare-earth oxide, historically discharged into unlined ponds overseas &mdash; China's Bayan Obo, with documented contamination, cancers, and birth defects downstream. Australia is positioning itself to do this "cleaner": lined containment, zero-liquid-discharge design at Iluka's WA refinery. That is a design intention on projects mostly not yet operating at scale, not a proven track record.</li>
+            <li><strong>E-waste.</strong> Not yet well quantified in the Australian sources found &mdash; flagged as a genuine gap, not researched to the same depth here.</li>
+            <li><strong>Land / ecosystem.</strong> Rare-earth ore bodies sit disproportionately in low-water regions, meaning mine siting and water availability are already in tension before AI demand is added to the equation.</li>
+          </ul>
+
+          <div class="callout callout-alert">
+            <div class="callout-label">Central finding</div>
+            <div class="callout-body">The two "solutions" most often proposed &mdash; dry/air cooling and closed-loop liquid cooling &mdash; don't eliminate pollution, they <strong>relocate</strong> it. Dry cooling moves the water cost into the electricity grid. Closed-loop cooling reduces evaporative water loss but concentrates chemical additives &mdash; nitrite inhibitors, glycol &mdash; that, per industry-critical sources, can reach 600&ndash;7,000 ppm in-loop versus a 1 ppm safe drinking limit, creating a toxicity discharge risk in place of a volume consumption problem. There is currently no cooling technology that reduces water consumption, electricity consumption, and chemical discharge risk simultaneously at scale. That's not a reason to give up on elimination &mdash; it's the actual shape of the problem, and pretending otherwise is how well-intentioned advocacy gets picked apart by an engineer in the first five minutes.</div>
+          </div>
+        </div>
+      </div>
+
+      <div id="frame" class="section">
+  <h2>1. Frame</h2>
+  <div class="prose">
+    <p><span class="subhead">Situation, as understood.</span> Australia is in the early-but-accelerating phase of a global AI infrastructure buildout &mdash; hyperscaler capex reaching $660&ndash;725 billion globally in 2026 alone. That buildout has a downstream water footprint (data centre cooling, concentrated on already-stressed urban water networks) and an upstream water footprint (critical-minerals mining and refining feeding chips, batteries, and grid buildout). Both are currently under-regulated relative to the scale of what's proposed.</p>
+
+    <p><span class="subhead">What triggered this now.</span> This analysis serves three audiences at once: building a case toward companies and governments (influence), giving the public grounded hope that better systems are possible (not doom, not hype), and informing a personal career direction &mdash; where sustained effort is best spent. No single existing document appears to serve all three; this is the shared evidentiary base underneath them.</p>
+
+    <p><span class="subhead">Decision or outcome at stake.</span> Not yet a single decision &mdash; this is pre-decision sense-making. But it should produce: a defensible set of claims usable in advocacy toward companies and government; an honest picture of what's genuinely hopeful versus still unproven; and a map of where effort is scarce relative to the size of the problem &mdash; the career-relevant white space.</p>
+
+    <p><span class="subhead">Who owns the outcome.</span> Diffuse, and part of the problem. Water utilities &mdash; Sydney Water, Melbourne Water &mdash; are accountable for supply but not for approving data centres. Planning and development approval sits with state governments. The Commonwealth is drafting national standards, in progress as of mid-2026, but these are not yet in force. Data centre operators &mdash; mostly US hyperscalers (Amazon, Microsoft, Alphabet, Meta, Oracle) plus OpenAI and Anthropic as anchor tenants &mdash; have no binding drought obligations. No single actor currently owns "total water impact of AI infrastructure in Australia." That fragmentation is itself a finding (Section 5).</p>
+
+    <p><span class="subhead">Constraints.</span> This case is being built without institutional resources or authority &mdash; the available leverage is evidence, narrative, and where a career gets pointed, not budget or regulatory power.</p>
+
+    <p><span class="subhead">What's been tried.</span> The Commonwealth is legislating water-efficiency standards for large data centres, but by the government's own account this is proceeding without completed water-impact modelling. Dr Michael Vardon of ANU: <em>"If you haven't got any data, you're probably not going to get the best decisions."</em> That's a live, quotable admission of a Cynefin-relevant condition &mdash; policy is being written under genuine uncertainty, not complicated-but-knowable calculation.</p>
+  </div>
+</div>
+
+
+      <div id="cynefin" class="section">
+  <h2>2. Situate &mdash; Cynefin</h2>
+  <div class="prose">
+    <p>Cynefin sorts a problem by how knowable cause-and-effect is <em>before</em> you act: clear (best practice, obvious), complicated (needs expertise but is analysable), complex (only understandable in retrospect, requires probing), chaotic (act first to stabilise, then sense), or confused/disordered (unclear which of the above it even is).</p>
+
+    <p>This situation is not one domain &mdash; it's at least three, stacked, and treating it as one is the most likely misclassification error.</p>
+
+    <div class="tablewrap">
+      <table class="brief">
+        <thead><tr><th>Sub-problem</th><th>Domain</th><th>Why</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>How much water does data centre X use, given a specified cooling design?</td>
+            <td><span class="domain domain-complicated">Complicated</span></td>
+            <td>Engineering knowable via Water Usage Effectiveness metrics, thermodynamics, and site data. Experts can agree in advance. The data gap here is withheld/uncollected, not unknowable.</td>
+          </tr>
+          <tr>
+            <td>What happens to Sydney's total water system if the full 90-facility pipeline is built, under drought, with current-generation cooling mixes, interacting with population growth and climate change?</td>
+            <td><span class="domain domain-complex">Complex</span></td>
+            <td>Multiple interacting actors, no controlled experiment possible, feedback loops with delays, genuinely emergent &mdash; you find out what happens by watching it unfold. Very likely being treated as complicated ("build a model, get the number") when it's actually complex.</td>
+          </tr>
+          <tr>
+            <td>Will closed-loop cooling's chemical discharge become a second-order water pollution crisis once facilities scale and blow-down events accumulate?</td>
+            <td><span class="domain domain-complex">Complex &rarr; confused</span></td>
+            <td>Genuine expert disagreement exists in the sources themselves &mdash; vendors and Microsoft's own CEO frame closed-loop as solving the water problem; a water-monitoring vendor (KETOS) frames the same technology as a "chemical time bomb." The disagreement is about scale, monitoring adequacy, and time horizon &mdash; not yet resolved.</td>
+          </tr>
+          <tr>
+            <td>Should there be a national drought-restriction regime for data centres, parallel to agriculture?</td>
+            <td><span class="domain domain-clear">Complicated &rarr; clear, politically</span></td>
+            <td>The mechanism &mdash; extend existing water-entitlement/restriction frameworks &mdash; is not novel; Australia already does this for irrigators. A policy-transfer problem, not a discovery problem. The obstacle is political will and lobbying power, not knowledge.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout">
+      <div class="callout-label">Misclassification risk</div>
+      <div class="callout-body">The government's current legislative approach &mdash; mandatory water-efficiency standards, drafted before impact modelling exists &mdash; treats a complex problem as if it were complicated, as though the right static rule can be worked out analytically and imposed. Vardon's "no data" complaint is a symptom of this. A complex-domain-appropriate response would instead run small, monitored, reversible probes &mdash; staged approvals tied to real-time water reporting, sunset clauses, mandatory drought-protocol disclosure before build &mdash; and adjust based on what's observed, rather than committing to a national standard now and hoping the number was right. This is a genuine, evidence-grounded critique for a government audience: not "you're not doing enough," but "you're using the wrong kind of instrument for this kind of problem."</div>
+    </div>
+
+    <p style="font-size:14px; color:var(--text-muted);"><strong>Assumption flagged:</strong> the legislative approach is inferred to be one-shot/static from the reporting; if the actual draft standards include staged review or sunset mechanisms, that changes this assessment &mdash; worth verifying against the primary legislative text before using this claim in advocacy.</p>
+
+    <p>Plotting the sub-problems against expert agreement and whether a known playbook exists makes the misclassification argument visible rather than asserted &mdash; "Where policy acts now" sits far from "Aggregate water system," the same gap the table above describes in words.</p>
+
+    <figure class="exhibit">
+      <div class="exhibit-label">Exhibit &middot; Cynefin placement, AI water sub-problems</div>
+      <img id="fig-cynefin-ai-water" data-parts="1" src="" alt="Quadrant chart plotting AI water pollution sub-problems by expert agreement and whether a known playbook exists" />
+      <figcaption>Sub-problems inside the AI-driven data centre water chain, plotted by expert agreement and whether a known playbook exists.</figcaption>
+    </figure>
+
+    <p>The same pattern repeats one level upstream, independently &mdash; worth noting because a pattern found twice by separate reasoning is stronger evidence than either instance alone.</p>
+
+    <figure class="exhibit">
+      <div class="exhibit-label">Exhibit &middot; Cynefin placement, critical minerals sub-problems</div>
+      <img id="fig-cynefin-critical-minerals" data-parts="1" src="" alt="Quadrant chart plotting critical minerals water sub-problems by expert agreement and whether a known playbook exists" />
+      <figcaption>Sub-problems inside the critical-minerals mining and refining water chain, plotted the same way.</figcaption>
+    </figure>
+  </div>
+</div>
+
+
+      <div id="wardley" class="section">
+  <h2>3. Map the terrain &mdash; Wardley map</h2>
+  <div class="prose">
+    <p>Two separate value chains matter here &mdash; and shouldn't be collapsed, because they have different users, different owners, and different evolution stages. Wardley mapping plots components from genesis (novel, uncertain, custom-built) through custom-built and product to commodity/utility (standardised, well-understood, interchangeable) &mdash; evolution stage indicates how much room there is for competitive differentiation versus how ripe something is for regulation-as-utility.</p>
+
+    <p>Both maps below went through several rounds of correction after initial drafting &mdash; visibility placements were re-derived from actual chain-dependency depth, not narrative salience &mdash; and each map was extended with a second anchor, <strong>Reduce Pollution</strong>, connected by "undermines" edges from the pollution outputs each chain actually produces. That second anchor turns each map from descriptive (what serves the user) into diagnostic (what that same chain is doing to the goal that actually matters), with the two anchors sitting in direct visual tension, connected through the same components.</p>
+
+    <p class="subhead">Map A &mdash; downstream: data centre water consumption chain</p>
+    <figure class="exhibit">
+      <div class="exhibit-label">Exhibit &middot; Wardley map, AI data centre water chain</div>
+      <img id="fig-wardley-map-a" data-parts="1" src="" alt="Wardley map of the AI data centre water chain, from AI model demand down to cooling systems, water loss, chemical discharge, grid emissions and electricity grid" />
+      <figcaption><strong>What's evidenced vs. guessed:</strong> the anchor &rarr; model &rarr; compute &rarr; facility spine and the "Water Disclosure" placement at genesis are directly evidenced &mdash; the government itself says the modelling doesn't exist yet. The electricity-grid water linkage (thermal/hydro generation consuming water) is a systems-thinking inference, not yet checked against Australian generation-mix water data &mdash; flagged as an assumption to verify.</figcaption>
+    </figure>
+
+    <p>Reading the map: every cooling method produces an emission &mdash; there's no clean branch. Evaporative cooling loses water outright; closed-loop cooling concentrates it into a chemical discharge; dry cooling exports it as grid emissions. All three pollution outputs sit in the same low-evolution territory as "Water Disclosure" &mdash; the governance gap and the pollution itself occupy the same undeveloped ground on the map, a stronger way of making the point than stating it in prose.</p>
+
+    <div class="callout">
+      <div class="callout-label">Leverage chain</div>
+      <div class="callout-body">Cooling Systems needs Advanced Engineering &mdash; better closed-loop chemistry, monitoring &mdash; to improve, and Advanced Engineering needs Funding to happen: money enables engineering enables cleaner cooling. Separately, the pollution outputs and the disclosure gap both need Public Policies to move them out of genesis. Two levers, not one &mdash; Funding&rarr;Engineering fixes the technical side, Public Policies fixes the accountability side &mdash; and the map shows neither is optional: pushing only one leaves the other emission pathway untouched.</div>
+    </div>
+
+    <p class="subhead" style="margin-top:8px;">Map B &mdash; upstream: critical minerals / mining water chain</p>
+    <figure class="exhibit">
+      <div class="exhibit-label">Exhibit &middot; Wardley map, critical minerals water chain</div>
+      <img id="fig-wardley-map-b" data-parts="1" src="" alt="Wardley map of the critical minerals water chain, from ore extraction and refining down to chip fabs, battery makers, and pollution outputs" />
+      <figcaption>Australia's rare-earth refining strategy plotted against water and waste intensity, positioned relative to the same Reduce Pollution counter-anchor used in Map A.</figcaption>
+    </figure>
+
+    <div class="callout callout-alert">
+      <div class="callout-label">Cross-map conflict &mdash; most important structural finding</div>
+      <div class="callout-body">Australia's stated strategy is to refine more rare earths domestically &mdash; moving up Map B, "cleaner than China" &mdash; specifically to supply the chip and battery chains that Map A depends on. But refining is the most water-and-waste-intensive step, and it's landing in regions chosen for ore geology, not water abundance &mdash; the same siting mismatch already identified as the core problem in Map A, where data centres are built where the grid and customers are, not where water is. Australia is on track to replicate its data-centre water-siting mistake one level up the value chain, at a stage that produces roughly 2,000 tonnes of acidic wastewater per tonne of product &mdash; a materially higher-consequence failure mode than a data centre's evaporative cooling tower if containment design underperforms.</div>
+    </div>
+  </div>
+</div>
+
+
+      <div id="systems" class="section">
+  <h2>4. Surface the dynamics &mdash; Systems Thinking</h2>
+  <div class="prose">
+    <p>Three loops matter. The diagrams use <span class="tag" style="padding:2px 8px; font-size:12px;">+</span> for reinforcing (more begets more) and delay markers where the evidence specifically supports a delay.</p>
+
+    <p class="subhead">Loop 1 &mdash; the siting-mismatch reinforcing loop (data centres)</p>
+    <figure class="exhibit">
+      <div class="exhibit-label">Exhibit &middot; causal loop diagram &mdash; The Growth Engine and the Siting/Water Loop</div>
+      <img id="fig-loop-1" data-parts="1" src="" alt="Causal loop diagram showing the Growth Engine reinforcing loop and the Missing Drought-Restriction loop, joined by a one-way link" />
+      <figcaption>Two separate closed loops joined by a single one-way link, not one combined cycle.</figcaption>
+    </figure>
+
+    <p>This is a classic reinforcing loop with no built-in balancing mechanism yet &mdash; nothing currently caps it before the water system itself becomes the constraint. Balancing loops that should exist &mdash; drought restrictions, water pricing that reflects scarcity, planning approval limits &mdash; are exactly the components sitting at genesis on the Wardley map: missing, not just weak.</p>
+
+    <div class="callout">
+      <div class="callout-label">Finding, visible only once drawn</div>
+      <div class="callout-body">The graph doesn't form one big loop &mdash; it's two separate closed loops joined by a single one-way link. The real reinforcing cycle is AI Demand Growth &rarr; Hyperscaler Capex &rarr; Lower Cost Per Query &rarr; More Inference Demand &rarr; back to AI Demand Growth. Siting decisions and water stress (Hyperscaler Capex &rarr; Data Centre Approvals &rarr; Sited Near Existing Infra &rarr; Water From Stressed Network) sit downstream of that loop, not inside it, connected by exactly one link that only runs one direction. Nothing currently flows back. If the missing drought-restriction link were real, it would close a second, separate loop &mdash; and because it would carry one negative-polarity connection, that second loop would be balancing, not reinforcing: it would dampen approvals, not add to growth. Getting this distinction right matters for any tool with automatic loop-type detection &mdash; a missing or counterfactual link with unclear polarity can easily get auto-labeled as an additional reinforcing loop, which visually claims the opposite of the intended point ("growth is unchecked on two fronts" versus the actual finding, "growth is unchecked because the second, corrective loop doesn't exist yet").</div>
+    </div>
+
+    <p class="subhead" style="margin-top:8px;">Loop 2 &mdash; the cooling-tradeoff shell game (no true balancing loop yet)</p>
+    <figure class="exhibit">
+      <div class="exhibit-label">Exhibit &middot; causal loop diagram &mdash; The Cooling Shell Game</div>
+      <img id="fig-loop-2" data-parts="1" src="" alt="Causal loop diagram showing the Water-Relief balancing loop, the Delayed Discharge reinforcing loop, and the open Displaced Burden chain into grid strain" />
+      <figcaption>Only the closed-loop branch closes a cycle back onto public pressure; the dry-cooling branch dead-ends into grid strain.</figcaption>
+    </figure>
+
+    <p>The delay in Loop 2's liquid-cooling branch is the dangerous part: quarterly monitoring means the system can look compliant for months while chemistry silently drifts, and a single unplanned drain event &mdash; cited: more than 3 tonnes of nitrite in one 500m&sup3; discharge &mdash; can undo the appearance of good stewardship instantly. This is a genuinely complex-domain dynamic, not because the chemistry is unknown, but because the accumulation-then-sudden-release pattern means past safety is not evidence of future safety &mdash; exactly what continuous probe-sense-respond monitoring is designed to catch and static compliance checklists are not.</p>
+
+    <p>Drawn out as an actual loop diagram, the two branches behave completely differently, an asymmetry easy to miss in prose but obvious once drawn: dry cooling never closes a cycle, it just dead-ends into grid strain, the problem externalized rather than fed back. Closed-loop cooling does close a cycle, and it closes back onto the exact variable &mdash; public and regulatory pressure on water &mdash; that it was deployed to relieve.</p>
+
+    <p class="subhead" style="margin-top:8px;">Loop 3 &mdash; the "no one owns the whole system" gap</p>
+    <figure class="exhibit">
+      <div class="exhibit-label">Exhibit &middot; diagram &mdash; The Missing Owner</div>
+      <img id="fig-loop-3" data-parts="1" src="" alt="Diagram of the No-One's-Watching chain: an open sequence from data centre operators through connection applications and facility approvals to cumulative pipeline exposure, with no feedback loop" />
+      <figcaption>Deliberately zero closed loops &mdash; the point is that no feedback path currently connects these actors.</figcaption>
+    </figure>
+
+    <p>Water utilities respond to connection applications, not total pipeline exposure. Planning departments approve individual facilities, not cumulative system load. No actor currently holds the reinforcing loop in Loop 1 accountable as a whole &mdash; each actor sees their local, complicated piece and behaves rationally within it, while the aggregate behaves like an unmanaged complex system. This is a structural, not personal, failure &mdash; worth stating plainly to a government audience because it reframes the ask from "try harder" to "someone needs to own the aggregate," a solvable organisational-design problem.</p>
+  </div>
+</div>
+
+
+      <div id="synthesis" class="section">
+  <h2>5. Synthesis &mdash; where the lenses agree and conflict</h2>
+  <div class="prose">
+    <ul>
+      <li><strong>Cynefin and Wardley agree:</strong> the components being treated as fixed and regulatable now &mdash; data centre approval standards &mdash; are the least evolved and most uncertain ones: genesis-stage water accounting, complex-domain aggregate system behaviour. Regulating a genesis-stage capability with a clear-domain instrument, a static national standard, is a mismatch, not just a pace problem.</li>
+      <li><strong>Systems thinking and Wardley conflict productively:</strong> Wardley suggests moving Australia's mineral refining up the value chain &mdash; good for supply-chain independence, arguably good for doing it "cleaner than China." Systems thinking's siting-mismatch loop suggests this repeats the exact structural error already visible in data centre siting, one level upstream, with higher-consequence chemistry. This is a real tension, not a contradiction to explain away: the "cleaner refining" strategy is only actually cleaner if siting and water-availability constraints are solved before scaling, and the data-centre experience &mdash; built first, water-modelled later, if at all &mdash; is the pattern most likely to repeat unless someone actively interrupts it.</li>
+      <li><strong>The chemical-discharge concern (Loop 2) is the most under-covered risk relative to its potential consequence.</strong> Volume-consumption water stories get headlines &mdash; 250 ML/day, 20% of Sydney's supply; toxicity and discharge risk from the very technology marketed as the solution to that headline gets almost none. If the goal is genuinely eliminating pollution rather than relocating it, this is likely where the biggest gap between public narrative and physical reality currently sits.</li>
+    </ul>
+  </div>
+</div>
+
+
+      <div id="leverage" class="section">
+  <h2>6. Leverage points &amp; next moves</h2>
+  <div class="prose">
+    <p>Ranked by expected impact and reversibility, framed as probes &mdash; this is a complex domain in its core dynamics, so no comprehensive master plan is honestly available yet, per the discipline this analysis works under.</p>
+
+    <div class="callout">
+      <div class="callout-label">The two-lever structure</div>
+      <div class="callout-body">Both Wardley maps independently converge on the same pair of levers: Funding&rarr;Engineering (Advanced Engineering on Map A, Clean Refining on Map B) fixes the technical side of pollution; Public Policies fixes the accountability and governance side. Neither substitutes for the other. Funding a better closed-loop chemistry program without a disclosure mandate leaves the volume problem unmeasured; mandating disclosure without funding the engineering leaves operators with nothing better to disclose. Any advocacy or funding pitch built from this analysis should ask for both, not pick the more palatable one.</div>
+    </div>
+
+    <div class="tier">
+      <div class="tier-label"><span class="tier-dot high"></span>High leverage, low cost, reversible</div>
+      <div class="lev-item">
+        <div class="lev-num">01</div>
+        <div class="lev-body"><strong>Push "water accounting and disclosure" from genesis to utility, fast.</strong> The single most Wardley-consistent, least controversial ask: mandatory, standardised, public, real-time-ish reporting of water source, volume, peak demand, and discharge chemistry for any data centre above a size threshold. It's boring, it's cheap for operators relative to their capex, and it directly fixes the "we don't have the data" problem Vardon names &mdash; a strong opening move for the influence case.</div>
+      </div>
+      <div class="lev-item">
+        <div class="lev-num">02</div>
+        <div class="lev-body"><strong>Name the discharge-chemistry gap before industry marketing fully owns the "closed-loop = solved" narrative.</strong> Closed-loop cooling is being sold to the public &mdash; including via Microsoft's CEO, quoted directly &mdash; as effectively solved. The hope-narrative and the influence-case both benefit from getting ahead of this: not opposing closed-loop cooling, but insisting monitoring be continuous rather than quarterly, and that "water efficient" be defined to include discharge toxicity, not just volume. Falsifiable, technical, and not anti-technology &mdash; which makes it credible rather than alarmist.</div>
+      </div>
+      <div class="lev-item">
+        <div class="lev-num">03</div>
+        <div class="lev-body"><strong>Request the primary legislative text</strong> of the Commonwealth's draft data centre water standards &mdash; mentioned but not fully detailed in reporting &mdash; to verify whether staged or reversible mechanisms exist. This determines whether the Cynefin critique in Section 2 is accurate as stated or needs softening.</div>
+      </div>
+    </div>
+
+    <div class="tier">
+      <div class="tier-label"><span class="tier-dot medium"></span>Medium leverage, needs more evidence before committing</div>
+      <div class="lev-item">
+        <div class="lev-num">04</div>
+        <div class="lev-body"><strong>Probe whether an "aggregate water-demand modelling" enabling function is genuinely missing</strong> (Loop 3) or exists informally somewhere not surfaced in this search pass. If it's truly absent, this is a concrete, scoped career direction worth exploring &mdash; not "work in sustainability broadly" but "build the shared modelling capability that lets utilities, planners and the public see cumulative pipeline exposure before approval, not after." A small, testable first step: a freedom-of-information or public-data request to Sydney Water or NSW planning for whatever aggregate modelling currently exists, to find out how large the gap really is.</div>
+      </div>
+      <div class="lev-item">
+        <div class="lev-num">05</div>
+        <div class="lev-body"><strong>Check Australia's electricity-generation water footprint</strong> to firm up whether "dry cooling relocates the water cost to the grid" is a meaningful shift in Australia's specific generation mix &mdash; heavily coal/gas historically, transitioning &mdash; or a smaller effect than assumed. This claim is currently a systems-thinking inference, not yet Australia-evidenced, and it's used above as if it were solid.</div>
+      </div>
+    </div>
+
+    <div class="tier">
+      <div class="tier-label"><span class="tier-dot low"></span>Lower leverage / longer horizon</div>
+      <div class="lev-item">
+        <div class="lev-num">06</div>
+        <div class="lev-body"><strong>Track Iluka's zero-liquid-discharge refinery and the Donald mine</strong> as the test case for whether "cleaner than China" refining actually holds at operational scale. These are not yet fully operating, so any claim that Australia "solves" upstream water pollution is currently aspirational, not demonstrated &mdash; a natural 12&ndash;24 month watch point, not an immediate lever.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+      <div id="open-questions" class="section">
+  <h2>Open questions / explicit gaps</h2>
+  <div class="prose">
+    <p>Named rather than papered over, per how this analysis is supposed to work.</p>
+    <ul>
+      <li><strong>E-waste</strong> from AI hardware refresh cycles in Australia: not researched to the same depth here &mdash; flagged, not assumed to be minor.</li>
+      <li><strong>Electricity generation's own water footprint</strong> in Australia's specific grid mix: asserted as a systems link, not yet evidence-checked against Australian data.</li>
+      <li><strong>The actual text of the Commonwealth's draft water standards:</strong> referenced only via secondary reporting; the Cynefin critique in Section 2 should be re-verified against the primary document before use in advocacy.</li>
+      <li><strong>Whether an aggregate water-demand modelling function already exists</strong> somewhere &mdash; a utility, a research body &mdash; that this search pass didn't surface: worth a direct check before treating this as confirmed white space for a career pivot.</li>
+    </ul>
+  </div>
+</div>
+
+
+      <div id="sources" class="section">
+  <h2>Sources</h2>
+  <div class="sourcelist">
+    <div><span class="n">01</span><a href="https://pursuit.unimelb.edu.au/articles/what-ai-data-centres-really-mean-for-australias-water-supply" target="_blank" rel="noopener">What AI data centres really mean for Australia's water supply &mdash; Pursuit, University of Melbourne</a></div>
+    <div><span class="n">02</span><a href="https://www.maitlandmercury.com.au/story/9326902/sydney-water-ai-data-centres-to-use-20t-of-supply-by-2035/" target="_blank" rel="noopener">Sydney Water: AI data centres to use 20% of supply by 2035 &mdash; Maitland Mercury</a></div>
+    <div><span class="n">03</span><a href="https://www.stockjournal.com.au/story/9314847/albanese-government-legislates-data-centres-amid-water-data-gaps/" target="_blank" rel="noopener">Farmers face water restrictions during drought years, will data centres? &mdash; Stock Journal</a></div>
+    <div><span class="n">04</span><a href="https://www.climatecouncil.org.au/what-does-the-data-centre-boom-mean-for-australias-switch-to-renewables/" target="_blank" rel="noopener">Seizing the opportunity to do data centres right &mdash; Climate Council</a></div>
+    <div><span class="n">05</span><a href="https://www.abc.net.au/news/2025-11-15/australia-refining-rare-earths-environmental-challenges/105969994" target="_blank" rel="noopener">What Australia can learn from China to become the world's "cleaner" rare earth refiner &mdash; ABC News</a></div>
+    <div><span class="n">06</span><a href="https://ketos.co/closed-loop-cooling-water-saver-or-chemical-time-bomb" target="_blank" rel="noopener">Closed-loop cooling: water saver or chemical time bomb? &mdash; KETOS</a></div>
+    <div><span class="n">07</span><a href="https://intellectia.ai/blog/ai-infrastructure-investment-boom-2026" target="_blank" rel="noopener">The $700 billion AI infrastructure boom &mdash; Intellectia AI</a></div>
+    <div><span class="n">08</span><a href="https://wsaa.asn.au/Common/Uploaded%20files/library/report/WSAA%20Data%20Centres%20and%20water%20in%20Australia%20-%20December%202025.pdf" target="_blank" rel="noopener">WSAA &mdash; Data centres and water in Australia, December 2025 (PDF)</a></div>
+    <div><span class="n">09</span><a href="https://www.sciencedirect.com/science/article/pii/S0921344925004781" target="_blank" rel="noopener">Environmental impact assessment of &alpha;-spodumene (lithium) production in Australia &mdash; ScienceDirect</a></div>
+    <div><span class="n">10</span><a href="https://www.industry.gov.au/publications/critical-minerals-strategy-2023-2030" target="_blank" rel="noopener">Critical Minerals Strategy 2023&ndash;2030 &mdash; Australian Department of Industry, Science and Resources</a></div>
+  </div>
+</div>
+
+
+    </article>
+
+    <aside class="rail">
+      <div class="card">
+        <div class="card-title">Regulatory risk</div>
+        <div class="meter-row">
+          <div class="meter-seg on-low"></div>
+          <div class="meter-seg on-low"></div>
+          <div class="meter-seg on-high"></div>
+          <div class="meter-seg"></div>
+        </div>
+        <div class="meter-level" style="color: var(--accent-alert-strong);">HIGH</div>
+        <div class="meter-note">No completed water-impact modelling, no quantified national consumption figure, no drought-restriction regime for data centres &mdash; as of the government's own mid-2026 drafting process.</div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">In this report</div>
+        <nav class="tocnav">
+          <a href="#exec-summary">Executive summary</a>
+          <a href="#frame">1. Frame</a>
+          <a href="#cynefin">2. Situate &mdash; Cynefin</a>
+          <a href="#wardley">3. Map the terrain</a>
+          <a href="#systems">4. Surface the dynamics</a>
+          <a href="#synthesis">5. Synthesis</a>
+          <a href="#leverage">6. Leverage points</a>
+          <a href="#open-questions">Open questions</a>
+          <a href="#sources">Sources</a>
+        </nav>
+      </div>
+
+      <div class="card">
+        <div class="card-title">Report info</div>
+        <dl class="infolist">
+          <div><dt>Scope</dt><dd>Australia &mdash; data centre operation and critical-minerals mining/refining</dd></div>
+          <div><dt>Method</dt><dd>Systems Thinking, Cynefin, Wardley Mapping, Team Topologies, DDD</dd></div>
+          <div><dt>Prepared by</dt><dd>Simon, sense-making desk</dd></div>
+          <div><dt>Status</dt><dd>Living analysis &mdash; open questions logged, not closed</dd></div>
+        </dl>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<footer class="pagefoot">
+  <div class="container" style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; width:100%;">
+    <span>GREY ZONE &middot; INTELLIGENCE &amp; ANALYTICS</span>
+    <span>SPECIAL REPORT 202608220000</span>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var base = '/assets/ai-infrastructure-water-australia/';
+  var imgs = document.querySelectorAll('img[data-parts]');
+  imgs.forEach(function (img) {
+    var slug = img.id.replace(/^fig-/, '');
+    var parts = parseInt(img.getAttribute('data-parts'), 10) || 1;
+    var fetches = [];
+    for (var i = 0; i < parts; i++) {
+      fetches.push(fetch(base + slug + '.part' + i + '.b64').then(function (r) {
+        if (!r.ok) throw new Error('asset fetch failed: ' + r.status);
+        return r.text();
+      }));
+    }
+    Promise.all(fetches).then(function (chunks) {
+      img.src = 'data:image/png;base64,' + chunks.join('');
+    }).catch(function (err) {
+      console.error('Failed to load figure', slug, err);
+    });
+  });
+})();
+</script>

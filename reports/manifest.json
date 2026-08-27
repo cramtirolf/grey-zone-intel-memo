@@ -1,0 +1,26 @@
+[
+  {
+    "slug": "us-iran-israel-war-2026",
+    "memoId": "202608200000",
+    "publishedAt": "2026-08-20T00:00:00Z",
+    "title": "Five months on, exhaustion signals are building on the primary front — and being overridden rather than acted on",
+    "dek": "Since 28 February 2026, the United States and Israel have been at war with Iran and the network of state and non-state actors aligned with it. This memo updates our 5 August assessment with the intervening two weeks of reporting.",
+    "desk": "West Asia Desk",
+    "region": "West Asia",
+    "tags": ["West Asia", "Force Posture", "Economic Warfare", "Updated Assessment"],
+    "level": "SEVERE",
+    "levelBadge": "Threat: Severe"
+  },
+  {
+    "slug": "ai-infrastructure-water-australia",
+    "memoId": "202608221124",
+    "publishedAt": "2026-08-22T11:24:00Z",
+    "title": "The water number everyone quotes is real — and structurally misleading",
+    "dek": "A sense-making analysis of Australia's AI buildout: Systems Thinking, Cynefin, and Wardley Mapping applied to the water footprint of the AI infrastructure boom — consumption, discharge, and the governance gap between them.",
+    "desk": "The Sense-Making Desk",
+    "region": "Australia",
+    "tags": ["Australia", "Water Security", "Data Centres", "Critical Minerals"],
+    "level": "HIGH",
+    "levelBadge": "Regulatory risk: high"
+  }
+]
