@@ -352,7 +352,7 @@
 
     <figure class="exhibit">
       <div class="exhibit-label">Exhibit &middot; Cynefin placement, AI water sub-problems</div>
-      <img id="fig-cynefin-ai-water" data-parts="1" src="" alt="Quadrant chart plotting AI water pollution sub-problems by expert agreement and whether a known playbook exists" />
+      <img id="fig-cynefin-ai-water" src="/assets/ai-infrastructure-water-australia/cynefin-ai-water.png" alt="Quadrant chart plotting AI water pollution sub-problems by expert agreement and whether a known playbook exists" />
       <figcaption>Sub-problems inside the AI-driven data centre water chain, plotted by expert agreement and whether a known playbook exists.</figcaption>
     </figure>
 
@@ -360,7 +360,7 @@
 
     <figure class="exhibit">
       <div class="exhibit-label">Exhibit &middot; Cynefin placement, critical minerals sub-problems</div>
-      <img id="fig-cynefin-critical-minerals" data-parts="1" src="" alt="Quadrant chart plotting critical minerals water sub-problems by expert agreement and whether a known playbook exists" />
+      <img id="fig-cynefin-critical-minerals" src="/assets/ai-infrastructure-water-australia/cynefin-critical-minerals.png" alt="Quadrant chart plotting critical minerals water sub-problems by expert agreement and whether a known playbook exists" />
       <figcaption>Sub-problems inside the critical-minerals mining and refining water chain, plotted the same way.</figcaption>
     </figure>
   </div>
@@ -377,7 +377,7 @@
     <p class="subhead">Map A &mdash; downstream: data centre water consumption chain</p>
     <figure class="exhibit">
       <div class="exhibit-label">Exhibit &middot; Wardley map, AI data centre water chain</div>
-      <img id="fig-wardley-map-a" data-parts="1" src="" alt="Wardley map of the AI data centre water chain, from AI model demand down to cooling systems, water loss, chemical discharge, grid emissions and electricity grid" />
+      <img id="fig-wardley-map-a" src="/assets/ai-infrastructure-water-australia/wardley-map-a.png" alt="Wardley map of the AI data centre water chain, from AI model demand down to cooling systems, water loss, chemical discharge, grid emissions and electricity grid" />
       <figcaption><strong>What's evidenced vs. guessed:</strong> the anchor &rarr; model &rarr; compute &rarr; facility spine and the "Water Disclosure" placement at genesis are directly evidenced &mdash; the government itself says the modelling doesn't exist yet. The electricity-grid water linkage (thermal/hydro generation consuming water) is a systems-thinking inference, not yet checked against Australian generation-mix water data &mdash; flagged as an assumption to verify.</figcaption>
     </figure>
 
@@ -391,7 +391,7 @@
     <p class="subhead" style="margin-top:8px;">Map B &mdash; upstream: critical minerals / mining water chain</p>
     <figure class="exhibit">
       <div class="exhibit-label">Exhibit &middot; Wardley map, critical minerals water chain</div>
-      <img id="fig-wardley-map-b" data-parts="1" src="" alt="Wardley map of the critical minerals water chain, from ore extraction and refining down to chip fabs, battery makers, and pollution outputs" />
+      <img id="fig-wardley-map-b" src="/assets/ai-infrastructure-water-australia/wardley-map-b.png" alt="Wardley map of the critical minerals water chain, from ore extraction and refining down to chip fabs, battery makers, and pollution outputs" />
       <figcaption>Australia's rare-earth refining strategy plotted against water and waste intensity, positioned relative to the same Reduce Pollution counter-anchor used in Map A.</figcaption>
     </figure>
 
@@ -411,7 +411,7 @@
     <p class="subhead">Loop 1 &mdash; the siting-mismatch reinforcing loop (data centres)</p>
     <figure class="exhibit">
       <div class="exhibit-label">Exhibit &middot; causal loop diagram &mdash; The Growth Engine and the Siting/Water Loop</div>
-      <img id="fig-loop-1" data-parts="1" src="" alt="Causal loop diagram showing the Growth Engine reinforcing loop and the Missing Drought-Restriction loop, joined by a one-way link" />
+      <img id="fig-loop-1" src="/assets/ai-infrastructure-water-australia/loop-1.png" alt="Causal loop diagram showing the Growth Engine reinforcing loop and the Missing Drought-Restriction loop, joined by a one-way link" />
       <figcaption>Two separate closed loops joined by a single one-way link, not one combined cycle.</figcaption>
     </figure>
 
@@ -425,7 +425,7 @@
     <p class="subhead" style="margin-top:8px;">Loop 2 &mdash; the cooling-tradeoff shell game (no true balancing loop yet)</p>
     <figure class="exhibit">
       <div class="exhibit-label">Exhibit &middot; causal loop diagram &mdash; The Cooling Shell Game</div>
-      <img id="fig-loop-2" data-parts="1" src="" alt="Causal loop diagram showing the Water-Relief balancing loop, the Delayed Discharge reinforcing loop, and the open Displaced Burden chain into grid strain" />
+      <img id="fig-loop-2" src="/assets/ai-infrastructure-water-australia/loop-2.png" alt="Causal loop diagram showing the Water-Relief balancing loop, the Delayed Discharge reinforcing loop, and the open Displaced Burden chain into grid strain" />
       <figcaption>Only the closed-loop branch closes a cycle back onto public pressure; the dry-cooling branch dead-ends into grid strain.</figcaption>
     </figure>
 
@@ -436,7 +436,7 @@
     <p class="subhead" style="margin-top:8px;">Loop 3 &mdash; the "no one owns the whole system" gap</p>
     <figure class="exhibit">
       <div class="exhibit-label">Exhibit &middot; diagram &mdash; The Missing Owner</div>
-      <img id="fig-loop-3" data-parts="1" src="" alt="Diagram of the No-One's-Watching chain: an open sequence from data centre operators through connection applications and facility approvals to cumulative pipeline exposure, with no feedback loop" />
+      <img id="fig-loop-3" src="/assets/ai-infrastructure-water-australia/loop-3.png" alt="Diagram of the No-One's-Watching chain: an open sequence from data centre operators through connection applications and facility approvals to cumulative pipeline exposure, with no feedback loop" />
       <figcaption>Deliberately zero closed loops &mdash; the point is that no feedback path currently connects these actors.</figcaption>
     </figure>
 
@@ -586,26 +586,3 @@
     <span>SPECIAL REPORT 202608220000</span>
   </div>
 </footer>
-
-<script>
-(function () {
-  var base = '/assets/ai-infrastructure-water-australia/';
-  var imgs = document.querySelectorAll('img[data-parts]');
-  imgs.forEach(function (img) {
-    var slug = img.id.replace(/^fig-/, '');
-    var parts = parseInt(img.getAttribute('data-parts'), 10) || 1;
-    var fetches = [];
-    for (var i = 0; i < parts; i++) {
-      fetches.push(fetch(base + slug + '.part' + i + '.b64').then(function (r) {
-        if (!r.ok) throw new Error('asset fetch failed: ' + r.status);
-        return r.text();
-      }));
-    }
-    Promise.all(fetches).then(function (chunks) {
-      img.src = 'data:image/png;base64,' + chunks.join('');
-    }).catch(function (err) {
-      console.error('Failed to load figure', slug, err);
-    });
-  });
-})();
-</script>
